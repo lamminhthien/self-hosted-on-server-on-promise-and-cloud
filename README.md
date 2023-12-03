@@ -161,11 +161,6 @@ sudo systemctl start nginx
 
 
 # [GitHub: Step-by-Step Instructions for Setting Up a Workflow](https://app.tango.us/app/workflow/55d4c68e-40d1-486e-9c72-8d906266f517?utm_source=markdown&utm_medium=markdown&utm_campaign=workflow%20export%20links)
-
-__Creation Date:__ December 3, 2023  
-__Created By:__ Thiện Lâm Minh  
-[View most recent version on Tango.us](https://app.tango.us/app/workflow/55d4c68e-40d1-486e-9c72-8d906266f517?utm_source=markdown&utm_medium=markdown&utm_campaign=workflow%20export%20links)
-
 ## Setup Github Action Workflow first
 
 ### 1. Click on Actions
