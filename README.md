@@ -286,5 +286,11 @@ Make sure your image name is the same as tar file name, which created by docker 
 
 ## After complete all, we can merge pull request set up github action and ready for deploy to Server EC2.
 
+## How to open port for testing web, and prepare for using Portainer later.
+
+## Setup Nginx and SSL
+
+## Setup Portainer CE for manager, logging Docker Container:
+https://docs.portainer.io/start/install-ce/server/docker/linux#deployment
 
 
