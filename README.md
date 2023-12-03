@@ -236,6 +236,11 @@ You can get content from folder .github/workflows
 ![Step 14 screenshot](https://images.tango.us/workflows/55d4c68e-40d1-486e-9c72-8d906266f517/steps/76845072-c8ab-4415-b626-5b8201f75f59/89396554-841e-4ac1-b6d9-e80cceb71979.png?crop=focalpoint&fit=crop&fp-x=0.6221&fp-y=0.8096&fp-z=2.3197&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=418&mark-y=451&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz0zNjUmaD04NyZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
 
 # [Managing Secrets and Variables in GitHub Actions](https://app.tango.us/app/workflow/be8b220c-72bf-44da-8094-aac7667c044d?utm_source=markdown&utm_medium=markdown&utm_campaign=workflow%20export%20links)
+secrets.STAGING
+secrets.STAGE_SERVER_HOST
+secrets.STAGE_SERVER_KEY_SSH
+
+Note that all of secret key in Github Action workflow must set up on Settings for each repo before use it in Github Action
 
 ### 1. Click on Settings
 ![Step 1 screenshot](https://images.tango.us/workflows/be8b220c-72bf-44da-8094-aac7667c044d/steps/152ff14d-4637-4fba-ba98-d8c09ecaa25b/b50e8fd2-1b7d-4607-bc75-9cb1c07a619d.png?crop=focalpoint&fit=crop&fp-x=0.5674&fp-y=0.0825&fp-z=2.7289&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=491&mark-y=128&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0yMTgmaD04MCZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
