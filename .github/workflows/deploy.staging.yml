@@ -1,0 +1,58 @@
+# This workflow will use github action server to build docker, then deploy docker image on your own server.
+# Prevent overload, high cpu, high RAM usage on your own server.
+# This not only work for Amazon Web Service, but also work for 3rd party server like Vietnix VPS, Digital Ocean, Viettel IDC,...
+# Attention: Use your Visual Studio Code to open and copy ssh key, do not use cat command on terminal to copy key.
+name: Deploy on server stage (Project Name)
+
+env:
+  APP_ENV: ${{ secrets.STAGING }}
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pull code
+        uses: actions/checkout@v3
+
+      - name: Extract env file multi line.
+        run: |
+          rm -r -f .env
+          touch .env_temp
+          echo $APP_ENV | tee .env_temp
+          sed 's/ /\n/g' .env_temp >> .env
+          rm -r -f .env_temp
+
+      - name: Docker
+        run: |
+          docker build -t your-project-name .
+          docker save -o your-project-name.tar your-project-name
+
+      - name: Copy Docker image to ec2 use SSH Key
+        uses: appleboy/scp-action@0.1.4
+        with:
+          host: ${{ secrets.STAGE_SERVER_HOST }}
+          username: ubuntu
+          port: 22
+          key: ${{ secrets.STAGE_SERVER_KEY_SSH }}
+          source: "your-project-name.tar,docker-compose.yml"
+          target: "~/your-project-name"
+
+      - name: Executing remote ssh commands using SSH Key
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.STAGE_SERVER_HOST }}
+          username: ubuntu
+          port: 22
+          key: ${{ secrets.STAGE_SERVER_KEY_SSH }}
+          script_stop: true
+          script: |
+            sudo docker system prune -a -f
+            cd ~/your-project-name
+            sudo snap install docker
+            sudo docker load --input your-project-name.tar
+            sudo docker-compose up -d --force-recreate
+            rm -rf your-project-name.tar
