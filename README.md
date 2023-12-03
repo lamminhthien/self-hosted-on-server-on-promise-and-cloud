@@ -1,6 +1,12 @@
 # Tutorial: Self-Hosted Node.js App Deployment on On-Premise and Cloud Servers with CI/CD
+# Section
+I. [Create an EC2 on AWS](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud#attach-static-ip-may-be-in-other-cloud-platform-in-vietnam-static-ip-will-be-available-by-default)
 
-## Create and EC2 on AWS
+II. [Create and attach Elastic IPs to EC2](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud#attach-static-ip-may-be-in-other-cloud-platform-in-vietnam-static-ip-will-be-available-by-default)
+
+III. [Create Github Action Workflow](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud#setup-github-action-workflow-first)
+
+## I. Create and EC2 on AWS
 
 ### 1. Type "EC2"
 ![Step 1 screenshot](https://images.tango.us/workflows/6c8c03a1-e2d9-49ca-9c8b-c96b736b5e52/steps/de2daf92-ba1d-4483-951e-e2fbe48ada52/d01b25f2-19af-4142-ba4b-afe641183521.png?crop=focalpoint&fit=crop&fp-x=0.3130&fp-y=0.0271&fp-z=1.5599&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=267&mark-y=7&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz02MzgmaD02MiZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
