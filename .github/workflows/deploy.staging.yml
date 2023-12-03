@@ -32,13 +32,13 @@ jobs:
           docker save -o your-project-name.tar your-project-name
 
       - name: Copy Docker image to ec2 use SSH Key
-        uses: appleboy/scp-action@0.1.4
+        uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.STAGE_SERVER_HOST }}
           username: ubuntu
           port: 22
           key: ${{ secrets.STAGE_SERVER_KEY_SSH }}
-          source: "your-project-name.tar,docker-compose.yml"
+          source: "your-project-name.tar,docker-compose-ssh.yml"
           target: "~/your-project-name"
 
       - name: Executing remote ssh commands using SSH Key
@@ -54,5 +54,5 @@ jobs:
             cd ~/your-project-name
             sudo snap install docker
             sudo docker load --input your-project-name.tar
-            sudo docker-compose up -d --force-recreate
+            sudo docker-compose -f docker-compose-ssh.yml  up -d --force-recreate
             rm -rf your-project-name.tar
