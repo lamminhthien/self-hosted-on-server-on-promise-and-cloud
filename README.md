@@ -6,6 +6,8 @@ II. [Create and attach Elastic IPs to EC2](https://github.com/lamminhthien/self-
 
 III. [Create Github Action Workflow](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud#setup-github-action-workflow-first)
 
+IV. [Setup some secret variable key for your app and deployment]()
+
 ## I. Create and EC2 on AWS
 
 ### 1. Type "EC2"
@@ -232,3 +234,64 @@ You can get content from folder .github/workflows
 
 ### 14. Click on Create pull request
 ![Step 14 screenshot](https://images.tango.us/workflows/55d4c68e-40d1-486e-9c72-8d906266f517/steps/76845072-c8ab-4415-b626-5b8201f75f59/89396554-841e-4ac1-b6d9-e80cceb71979.png?crop=focalpoint&fit=crop&fp-x=0.6221&fp-y=0.8096&fp-z=2.3197&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=418&mark-y=451&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz0zNjUmaD04NyZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
+
+# [Managing Secrets and Variables in GitHub Actions](https://app.tango.us/app/workflow/be8b220c-72bf-44da-8094-aac7667c044d?utm_source=markdown&utm_medium=markdown&utm_campaign=workflow%20export%20links)
+
+### 1. Click on Settings
+![Step 1 screenshot](https://images.tango.us/workflows/be8b220c-72bf-44da-8094-aac7667c044d/steps/152ff14d-4637-4fba-ba98-d8c09ecaa25b/b50e8fd2-1b7d-4607-bc75-9cb1c07a619d.png?crop=focalpoint&fit=crop&fp-x=0.5674&fp-y=0.0825&fp-z=2.7289&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=491&mark-y=128&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0yMTgmaD04MCZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
+
+
+### 2. Click on Secrets and variables
+![Step 2 screenshot](https://images.tango.us/workflows/be8b220c-72bf-44da-8094-aac7667c044d/steps/4aa07165-edde-4bb4-ae20-bd1b4f3cf65a/d9f7f2b7-8390-4241-9945-22709b06915f.png?crop=focalpoint&fit=crop&fp-x=0.2013&fp-y=0.7258&fp-z=2.0233&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=253&mark-y=341&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz00NzImaD02MiZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
+
+
+### 3. Click on Actions
+![Step 3 screenshot](https://images.tango.us/workflows/be8b220c-72bf-44da-8094-aac7667c044d/steps/f3050375-c20a-445f-82fb-dc059f65b576/97d5d962-719d-4aee-8684-9ec0b4ef52ff.png?crop=focalpoint&fit=crop&fp-x=0.2013&fp-y=0.7588&fp-z=2.0233&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=253&mark-y=350&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz00NzImaD02MiZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
+
+
+### 4. Click on New repository secret
+![Step 4 screenshot](https://images.tango.us/workflows/be8b220c-72bf-44da-8094-aac7667c044d/steps/bab0a909-2637-43b2-b5ba-86a396c71151/b6172770-d6c1-490d-bf18-7e13c5b98b3a.png?crop=focalpoint&fit=crop&fp-x=0.5565&fp-y=0.7536&fp-z=2.4095&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=434&mark-y=335&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0zMzMmaD03NCZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
+
+
+### 5. Type "STAGING"
+![Step 5 screenshot](https://images.tango.us/workflows/be8b220c-72bf-44da-8094-aac7667c044d/steps/d1c7663e-a15e-422a-8bbc-89697a887ff9/679446a1-6989-49be-abf2-5576699b9eba.png?crop=focalpoint&fit=crop&fp-x=0.5565&fp-y=0.2330&fp-z=1.4464&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=170&mark-y=228&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz04NjEmaD00NCZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
+
+
+### 6. Type "TEST=123"
+![Step 6 screenshot](https://images.tango.us/workflows/be8b220c-72bf-44da-8094-aac7667c044d/steps/8c5388e7-5c4e-44b2-8ea1-c00880719c5b/654879e4-825a-4b8c-a5b0-64c5fcb48b38.png?crop=focalpoint&fit=crop&fp-x=0.5565&fp-y=0.3892&fp-z=1.4464&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=170&mark-y=253&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz04NjEmaD0yMzgmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D)
+
+
+### 7. Click on Add secret
+![Step 7 screenshot](https://images.tango.us/workflows/be8b220c-72bf-44da-8094-aac7667c044d/steps/02d3c3ff-170b-48d2-8da7-692bcd31f0df/a7b13bbd-88d3-4467-bd03-a3e52c99e408.png?crop=focalpoint&fit=crop&fp-x=0.3425&fp-y=0.5206&fp-z=2.7194&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=489&mark-y=330&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0yMjEmaD04MyZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
+
+
+### 8. Click on New repository secret
+![Step 8 screenshot](https://images.tango.us/workflows/be8b220c-72bf-44da-8094-aac7667c044d/steps/0fcf3520-d9ed-4999-90eb-0028d7b08da2/f9f356e2-587d-4310-b2eb-ad77c91b1816.png?crop=focalpoint&fit=crop&fp-x=0.7470&fp-y=0.7062&fp-z=3.1803&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=381&mark-y=323&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz00MzkmaD05OCZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
+
+
+### 9. Paste "STAGE_SERVER_HOST" into input
+![Step 9 screenshot](https://images.tango.us/workflows/be8b220c-72bf-44da-8094-aac7667c044d/steps/9216c4c4-d4d3-4958-9029-db61dc2f40a0/91307809-6426-4a1b-80e4-1179732fdbe2.png?crop=focalpoint&fit=crop&fp-x=0.5565&fp-y=0.2330&fp-z=1.4464&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=170&mark-y=228&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz04NjEmaD00NCZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
+
+
+### 10. Type "abc-ap-south-east-1.ec2.com"
+![Step 10 screenshot](https://images.tango.us/workflows/be8b220c-72bf-44da-8094-aac7667c044d/steps/bf69cc93-73f6-4dcd-8267-4c14ec32b2f3/07bca5c9-9a5a-4a79-84ab-696a6497f1cf.png?crop=focalpoint&fit=crop&fp-x=0.5565&fp-y=0.3892&fp-z=1.4464&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=170&mark-y=253&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz04NjEmaD0yMzgmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D)
+
+
+### 11. Click on Add secret
+![Step 11 screenshot](https://images.tango.us/workflows/be8b220c-72bf-44da-8094-aac7667c044d/steps/b2dc4ffd-91da-4154-9a04-46654ac26a76/a7a68378-c11a-40d0-ade3-b2e18bd9554c.png?crop=focalpoint&fit=crop&fp-x=0.3425&fp-y=0.5206&fp-z=2.7194&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=489&mark-y=330&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0yMjEmaD04MyZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
+
+
+### 12. Click on New repository secret
+![Step 12 screenshot](https://images.tango.us/workflows/be8b220c-72bf-44da-8094-aac7667c044d/steps/bec280ac-7b6e-4a8d-b838-56a8d7505788/07c74449-d98d-40d1-83fd-845429982436.png?crop=focalpoint&fit=crop&fp-x=0.7470&fp-y=0.7062&fp-z=3.1803&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=381&mark-y=323&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz00MzkmaD05OCZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
+
+
+### 13. Paste "STAGE_SERVER_KEY_SSH" into input
+![Step 13 screenshot](https://images.tango.us/workflows/be8b220c-72bf-44da-8094-aac7667c044d/steps/90767e80-8684-40f4-96cc-4d5c208ef0cc/ab4ff8fb-f078-4d7f-9425-592a9d3211fe.png?crop=focalpoint&fit=crop&fp-x=0.5565&fp-y=0.2330&fp-z=1.4464&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=170&mark-y=228&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz04NjEmaD00NCZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
+
+
+### 14. Type "Your server key ssh copy from file pem. Must use vscode for copy key properly, don't use notepad or text editor"
+![Step 14 screenshot](https://images.tango.us/workflows/be8b220c-72bf-44da-8094-aac7667c044d/steps/efa7b83f-5418-4912-8e0a-3c5a5ec5cfb8/c8ab6524-583e-49a7-9868-099993565b5e.png?crop=focalpoint&fit=crop&fp-x=0.5565&fp-y=0.3892&fp-z=1.4464&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=170&mark-y=253&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz04NjEmaD0yMzgmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D)
+
+
+### 15. Click on Add secret
+![Step 15 screenshot](https://images.tango.us/workflows/be8b220c-72bf-44da-8094-aac7667c044d/steps/67f9803e-5a8b-46ca-aa39-c3ce527d901d/2916b5c7-f9f4-4778-870b-5cf5058fee07.png?crop=focalpoint&fit=crop&fp-x=0.3425&fp-y=0.5206&fp-z=2.7194&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=489&mark-y=330&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0yMjEmaD04MyZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
