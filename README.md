@@ -30,16 +30,14 @@ IV. [Managing Secrets and Variables in GitHub Actions](https://github.com/lammin
 
 
 ### 7. Choose Instance type
-![Step 8 screenshot](https://images.tango.us/workflows/6c8c03a1-e2d9-49ca-9c8b-c96b736b5e52/steps/fee14828-f2ad-4ce3-969d-171cbdf979c9/1ee59054-fe3e-426b-b57c-9378eba23bf8.png?crop=focalpoint&fit=crop&fp-x=0.3259&fp-y=0.5947&fp-z=1.2718&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=126&mark-y=364&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz03NDImaD0xNTgmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D)
-
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/6776335a-4a28-4b6e-83ec-313a7395f30b)
 
 ### 8. Searching t3.medium for server with 2vCPU and 4GB Ram.
 ![Step 9 screenshot](https://images.tango.us/workflows/6c8c03a1-e2d9-49ca-9c8b-c96b736b5e52/steps/7c61f83d-dc09-4843-b29f-c91b98874812/e6e37674-60d3-46f4-8ba6-2ac194579f96.png?crop=focalpoint&fit=crop&fp-x=0.3259&fp-y=0.1660&fp-z=1.2718&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=126&mark-y=161&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz03NDImaD01MyZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
 
 
 ### 9. Click on t3.medium. If you want more RAM, you can choose t3.large.
-![Step 10 screenshot](https://images.tango.us/workflows/6c8c03a1-e2d9-49ca-9c8b-c96b736b5e52/steps/63218ee3-e83a-4825-adcc-1ce6da9597de/a5fb0c31-9628-481f-92da-27069331e2e4.png?crop=focalpoint&fit=crop&fp-x=0.3259&fp-y=0.4622&fp-z=1.2718&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=126&mark-y=362&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz03NDImaD0xNjEmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D)
-
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/bf67db81-b919-4370-a320-6c90fa8a7f81)
 
 ### 10. Key pair (login). Click create new key pair. This will use for login to server and using in CI/CD
 ![Step 11 screenshot](https://images.tango.us/workflows/6c8c03a1-e2d9-49ca-9c8b-c96b736b5e52/steps/a6c470c5-4a36-46a0-92f0-e372b6183b7c/dd1eb541-351a-4d51-a248-5da6e5f78ffa.png?crop=focalpoint&fit=crop&fp-x=0.6678&fp-y=0.6213&fp-z=2.5660&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=423&mark-y=403&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz0zNTQmaD04MCZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
