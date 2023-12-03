@@ -113,6 +113,24 @@ sudo systemctl enable nginx
 sudo systemctl start nginx
 ```
 
+This code is a bash script that performs several tasks related to setting up a server environment. Let's break down each step:
+
+1. sudo apt update -y: This command updates the package lists on the server by fetching the latest version information from the repositories.
+
+2. sudo snap install docker: This command installs Docker, a popular platform for containerization, using the Snap package manager. Snap is a software deployment and package management system used in Ubuntu and other Linux distributions.
+
+3. sudo snap install nginx: This command installs Nginx, a high-performance web server and reverse proxy, also using the Snap package manager.
+
+4. sudo chmod 666 /var/run/docker.sock: This command grants read and write permissions to the Docker socket file, allowing Docker to be run without root user privileges. The Docker socket file is used for communication between the Docker daemon and the Docker client.
+
+5. sudo apt install -y certbot python3-certbot-nginx: This command installs Certbot, a tool for obtaining and managing SSL/TLS certificates from Let's Encrypt, along with the Certbot Nginx plugin. The Nginx plugin automates the process of configuring Nginx to use the obtained certificates.
+
+6. sudo systemctl enable nginx: This command enables the Nginx service to start automatically on system boot.
+
+7. sudo systemctl start nginx: This command starts the Nginx service immediately.
+
+Overall, this script updates the package lists, installs Docker and Nginx, grants Docker permissions, installs Certbot and the Certbot Nginx plugin, and starts the Nginx service. It sets up a basic server environment for hosting websites or applications with SSL/TLS encryption using Let's Encrypt certificates.
+
 ![Step 22 screenshot](https://images.tango.us/workflows/6c8c03a1-e2d9-49ca-9c8b-c96b736b5e52/steps/0d313b05-6cf5-4f7c-804f-3efa238b5e45/bc224a1b-2086-4a2e-9098-68c5aeb1e659.png?crop=focalpoint&fit=crop&fp-x=0.3303&fp-y=0.5585&fp-z=1.2580&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=125&mark-y=216&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz03NDcmaD00NTQmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D)
 
 
