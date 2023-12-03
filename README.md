@@ -274,3 +274,11 @@ Note that all of secret key in Github Action workflow must set up on Settings fo
 ### 15. Click on Add secret
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/9d130217-8093-43a5-8986-8fd71bad6d40)
 
+## Prepare Dockerfile and docker-compose:
+Make sure your image name is the same as tar file name, which created by docker build command in Build Stage. You can see some picture below for more detail
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/ed34d906-30b4-4fd0-ba61-feba6fc6439f)
+
+## After complete all, we can merge pull request set up github action and ready for deploy to Server EC2.
+
+
+
