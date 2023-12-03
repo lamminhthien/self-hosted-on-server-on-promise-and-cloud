@@ -12,6 +12,8 @@ V. [Prepare Dockerfile and docker-compose-ssh.yml](https://github.com/lamminhthi
 
 VI. [Ready for deploy](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/blob/main/README.md#prepare-dockerfile-and-docker-compose)
 
+VII [Setup Portainer for monitor, manage and log on Docker Containers]()
+
 ## I. Create and EC2 on AWS
 
 ### 1. Type "EC2"
