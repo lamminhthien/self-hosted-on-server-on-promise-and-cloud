@@ -1,22 +1,6 @@
 # Tutorial: Self-Hosted Node.js App Deployment on On-Premise and Cloud Servers with CI/CD
 
-## Create an EC2 instance on the AWS Console:
-
-# [Launching Self-Hosted Ubuntu Server on AWS EC2](https://app.tango.us/app/workflow/6c8c03a1-e2d9-49ca-9c8b-c96b736b5e52?utm_source=markdown&utm_medium=markdown&utm_campaign=workflow%20export%20links)
-
-__Creation Date:__ December 3, 2023  
-__Created By:__ Thiện Lâm Minh  
-[View most recent version on Tango.us](https://app.tango.us/app/workflow/6c8c03a1-e2d9-49ca-9c8b-c96b736b5e52?utm_source=markdown&utm_medium=markdown&utm_campaign=workflow%20export%20links)
-
-
-
-***
-
-
-
-
-## # [Console Home | Console Home | ap-southeast-1](https://ap-southeast-1.console.aws.amazon.com/console/home?region=ap-southeast-1)
-
+# Create and EC2 on AWS
 
 ### 1. Type "EC2"
 ![Step 1 screenshot](https://images.tango.us/workflows/6c8c03a1-e2d9-49ca-9c8b-c96b736b5e52/steps/de2daf92-ba1d-4483-951e-e2fbe48ada52/d01b25f2-19af-4142-ba4b-afe641183521.png?crop=focalpoint&fit=crop&fp-x=0.3130&fp-y=0.0271&fp-z=1.5599&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=267&mark-y=7&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz02MzgmaD02MiZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
@@ -66,7 +50,7 @@ __Created By:__ Thiện Lâm Minh
 ![Step 12 screenshot](https://images.tango.us/workflows/6c8c03a1-e2d9-49ca-9c8b-c96b736b5e52/steps/b298522e-5513-42f8-920e-ab7fc3b4ea25/56dfc6f3-7b73-4f82-932a-fd474b21784d.png?crop=focalpoint&fit=crop&fp-x=0.5173&fp-y=0.3207&fp-z=1.3736&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=196&mark-y=362&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz04MDkmaD01NyZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
 
 
-### 13. Click on Create key pair
+### 13. Click on Create key pair in this popup
 ![Step 13 screenshot](https://images.tango.us/workflows/6c8c03a1-e2d9-49ca-9c8b-c96b736b5e52/steps/35ccba9d-916b-44be-a087-c6761b058eb3/975fd719-2e10-4f9a-adfe-2125ae17a228.png?crop=focalpoint&fit=crop&fp-x=0.6966&fp-y=0.8580&fp-z=2.7106&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=387&mark-y=488&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz00MjYmaD0xMTImZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D)
 
 
@@ -82,7 +66,7 @@ __Created By:__ Thiện Lâm Minh
 ![Step 16 screenshot](https://images.tango.us/workflows/6c8c03a1-e2d9-49ca-9c8b-c96b736b5e52/steps/ccb7258b-c92c-4feb-a56b-3c27dbce230b/a79e1dbd-5f86-48d9-9ec6-3ba5661b37f7.png?crop=focalpoint&fit=crop&fp-x=0.1900&fp-y=0.8271&fp-z=1.9444&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=193&mark-y=547&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz01MDAmaD04MSZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
 
 
-### 17. Change Volume type (SSD Type). gp3 is cheaper than gp2
+### 17. Change Volume type (SSD Type).
 ![Step 17 screenshot](https://images.tango.us/workflows/6c8c03a1-e2d9-49ca-9c8b-c96b736b5e52/steps/927c841c-f36d-416d-8a43-ef3851eed86b/494840ff-8624-4fb7-a9f8-26a38433adc7.png?crop=focalpoint&fit=crop&fp-x=0.4144&fp-y=0.8271&fp-z=1.9444&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=350&mark-y=547&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz01MDAmaD04MSZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
 
 
@@ -94,23 +78,15 @@ __Created By:__ Thiện Lâm Minh
 ![Step 19 screenshot](https://images.tango.us/workflows/6c8c03a1-e2d9-49ca-9c8b-c96b736b5e52/steps/4ed5a6c1-64da-4634-becb-4bad2435babb/6e1847d3-068e-4707-8ac4-14c2f3600214.png?crop=focalpoint&fit=crop&fp-x=0.1576&fp-y=0.4553&fp-z=2.2246&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=221&mark-y=408&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz0zOTkmaD02OSZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
 
 
-### 20. Click on Termination protection select
+### 20. Enable Termination protection
 ![Step 20 screenshot](https://images.tango.us/workflows/6c8c03a1-e2d9-49ca-9c8b-c96b736b5e52/steps/d4084a31-41ab-4586-b420-a01693528180/455469f5-1213-4023-aee3-27c46229730b.png?crop=focalpoint&fit=crop&fp-x=0.3303&fp-y=0.7043&fp-z=1.2580&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=125&mark-y=530&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz03NDcmaD01MiZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
 
 
-### 21. Select Enable
-![Step 21 screenshot](https://images.tango.us/workflows/6c8c03a1-e2d9-49ca-9c8b-c96b736b5e52/steps/b04c4d07-8f92-40bc-90dd-8415913d5e31/2850a56e-6332-46c8-913f-9c0988b3e755.png?crop=focalpoint&fit=crop&fp-x=0.3303&fp-y=0.7782&fp-z=1.2580&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=125&mark-y=612&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz03NDcmaD01MiZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
+### 21. Enable Detailed CloudWatch monitoring
+![Step 21 screenshot](https://images.tango.us/workflows/6c8c03a1-e2d9-49ca-9c8b-c96b736b5e52/steps/15f2ef58-bebc-4e39-829d-d8356bdf7bb3/e7c93a74-3662-4dc3-968b-913a551230ea.png?crop=focalpoint&fit=crop&fp-x=0.3303&fp-y=0.7351&fp-z=1.2580&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=125&mark-y=564&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz03NDcmaD01MiZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
 
 
-### 22. Click on Detailed Cloudwatch monitoring select
-![Step 22 screenshot](https://images.tango.us/workflows/6c8c03a1-e2d9-49ca-9c8b-c96b736b5e52/steps/06626e14-c73f-4c40-bc3c-0198996420ca/4ce4d2ba-9a65-4a5c-8395-b4aaa5d3adc1.png?crop=focalpoint&fit=crop&fp-x=0.3303&fp-y=0.6612&fp-z=1.2580&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=125&mark-y=482&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz03NDcmaD01MiZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
-
-
-### 23. Select Enable
-![Step 23 screenshot](https://images.tango.us/workflows/6c8c03a1-e2d9-49ca-9c8b-c96b736b5e52/steps/15f2ef58-bebc-4e39-829d-d8356bdf7bb3/e7c93a74-3662-4dc3-968b-913a551230ea.png?crop=focalpoint&fit=crop&fp-x=0.3303&fp-y=0.7351&fp-z=1.2580&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=125&mark-y=564&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz03NDcmaD01MiZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
-
-
-### 24. Scrolldown to User data - optional
+### 22. Scrolldown to User data - optional
 
 Add this content below:
 
@@ -131,8 +107,8 @@ sudo systemctl enable nginx
 sudo systemctl start nginx
 ```
 
-![Step 24 screenshot](https://images.tango.us/workflows/6c8c03a1-e2d9-49ca-9c8b-c96b736b5e52/steps/0d313b05-6cf5-4f7c-804f-3efa238b5e45/bc224a1b-2086-4a2e-9098-68c5aeb1e659.png?crop=focalpoint&fit=crop&fp-x=0.3303&fp-y=0.5585&fp-z=1.2580&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=125&mark-y=216&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz03NDcmaD00NTQmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D)
+![Step 22 screenshot](https://images.tango.us/workflows/6c8c03a1-e2d9-49ca-9c8b-c96b736b5e52/steps/0d313b05-6cf5-4f7c-804f-3efa238b5e45/bc224a1b-2086-4a2e-9098-68c5aeb1e659.png?crop=focalpoint&fit=crop&fp-x=0.3303&fp-y=0.5585&fp-z=1.2580&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=125&mark-y=216&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz03NDcmaD00NTQmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D)
 
 
-### 25. Click on Launch instance
-![Step 25 screenshot](https://images.tango.us/workflows/6c8c03a1-e2d9-49ca-9c8b-c96b736b5e52/steps/5c28d19e-2bac-443c-b7e2-d6987bad8edc/2528bb9d-3b06-432d-a4e2-f2a8f5ec7362.png?crop=focalpoint&fit=crop&fp-x=0.6774&fp-y=0.8638&fp-z=2.5557&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=389&mark-y=524&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz00MjEmaD0xMDYmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D)
+### 23. Click on Launch instance
+![Step 23 screenshot](https://images.tango.us/workflows/6c8c03a1-e2d9-49ca-9c8b-c96b736b5e52/steps/5c28d19e-2bac-443c-b7e2-d6987bad8edc/2528bb9d-3b06-432d-a4e2-f2a8f5ec7362.png?crop=focalpoint&fit=crop&fp-x=0.6774&fp-y=0.8638&fp-z=2.5557&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=389&mark-y=524&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz00MjEmaD0xMDYmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D)
