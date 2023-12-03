@@ -8,6 +8,10 @@ III. [Create Github Action Workflow](https://github.com/lamminhthien/self-hosted
 
 IV. [Managing Secrets and Variables in GitHub Actions](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud#managing-secrets-and-variables-in-github-actions)
 
+V. [Prepare Dockerfile and docker-compose-ssh.yml](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/blob/main/README.md#prepare-dockerfile-and-docker-compose)
+
+VI. [Ready for deploy](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/blob/main/README.md#prepare-dockerfile-and-docker-compose)
+
 ## I. Create and EC2 on AWS
 
 ### 1. Type "EC2"
