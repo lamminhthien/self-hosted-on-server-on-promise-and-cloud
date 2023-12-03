@@ -1,4 +1,4 @@
-![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/d75ac741-a52a-42d9-bfdf-5e156f27cd38)# Tutorial: Self-Hosted Node.js App Deployment on On-Premise and Cloud Servers with CI/CD
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/89e7b551-a107-44a0-b214-9f4d1bb259e8)![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/d75ac741-a52a-42d9-bfdf-5e156f27cd38)# Tutorial: Self-Hosted Node.js App Deployment on On-Premise and Cloud Servers with CI/CD
 # Section
 I. [Create an EC2 on AWS](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud#attach-static-ip-may-be-in-other-cloud-platform-in-vietnam-static-ip-will-be-available-by-default)
 
@@ -143,8 +143,7 @@ Overall, this script updates the package lists, installs Docker and Nginx, grant
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/0ec43c80-d5bc-4ad5-a5de-eb5ced99a4c1)
 
 ### 9. On Allocated IPv4 address. Click copy IPv4 address to use for setup domain name, CI/CD,...
-![Step 9 screenshot](https://images.tango.us/workflows/9cc92e62-fac1-456c-b062-2be1d095714f/steps/d6773db4-925c-4a0f-b05d-faa799124fa4/7a7211f7-0b5d-436c-8281-0a17f98d27d7.png?crop=focalpoint&fit=crop&fp-x=0.2659&fp-y=0.4415&fp-z=3.0032&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=563&mark-y=399&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz03NSZoPTg4JmZpdD1jcm9wJmNvcm5lci1yYWRpdXM9MTA%3D)
-
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/c55ba4ec-e322-48a3-8f9d-6cc061e3f110)
 
 
 # [GitHub: Step-by-Step Instructions for Setting Up a Workflow](https://app.tango.us/app/workflow/55d4c68e-40d1-486e-9c72-8d906266f517?utm_source=markdown&utm_medium=markdown&utm_campaign=workflow%20export%20links)
@@ -179,53 +178,42 @@ This code is a GitHub Actions workflow that automates the deployment of a projec
 This workflow automates the process of building a Docker image, copying it to a server, and deploying the project using Docker Compose. It ensures consistency and simplifies the deployment process in a staging environment.
 
 ### 1. Click on Actions
-![Step 1 screenshot](https://images.tango.us/workflows/55d4c68e-40d1-486e-9c72-8d906266f517/steps/81556aef-7e5b-4bb4-ad93-e94b97468437/f8b0bc1b-d662-4041-908d-e85eebe0e4b8.png?crop=focalpoint&fit=crop&fp-x=0.2916&fp-y=0.0851&fp-z=2.6475&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=477&mark-y=152&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz0yNDcmaD05NSZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
-
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/eb9d20a8-f33b-4193-b257-bbcbd8b8228b)
 
 ### 2. Click on set up a workflow yourself 
-![Step 2 screenshot](https://images.tango.us/workflows/55d4c68e-40d1-486e-9c72-8d906266f517/steps/c1f7af43-0209-4624-abdc-89a8f9d6f4db/8d194000-d005-434c-80aa-72461d37abf1.png?crop=focalpoint&fit=crop&fp-x=0.1927&fp-y=0.2654&fp-z=2.1996&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=305&mark-y=417&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz00MDgmaD01MiZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
-
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/0db9bdad-8069-475a-9954-3b204df2228c)
 
 ### 3. Type "deploy.staging.yml"
-![Step 3 screenshot](https://images.tango.us/workflows/55d4c68e-40d1-486e-9c72-8d906266f517/steps/7e8a6583-b6d6-4f98-a66a-5a116f01366c/58edb120-0f97-4174-be30-13e51b07c8fa.png?crop=focalpoint&fit=crop&fp-x=0.5149&fp-y=0.1447&fp-z=2.2343&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=402&mark-y=246&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz0zOTYmaD04MCZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
-
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/64ce0b2c-b370-47c2-9bf1-8e60cab08937)
 
 ### 4. Paste selected text into element
 You can get content from folder .github/workflows
-![Step 4 screenshot](https://images.tango.us/workflows/55d4c68e-40d1-486e-9c72-8d906266f517/steps/2a828c22-309b-4c3d-80f6-6df89fd3ffbd/c7789ab9-f8bd-4784-851f-0aef08053a58.png?crop=focalpoint&fit=crop&fp-x=0.5157&fp-y=0.2489&fp-z=1.0434&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=6&mark-y=210&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz0xMTg3Jmg9MzkmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D)
-
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/4037672f-11c6-4f9c-a997-35cc3d42fe3c)
 
 ### 6. Click on Commit changes...
-![Step 6 screenshot](https://images.tango.us/workflows/55d4c68e-40d1-486e-9c72-8d906266f517/steps/eefa6e27-54c8-4726-9924-1d5397ef41f9/ba2028fc-6188-4d46-b916-a03f3bb788b6.png?crop=focalpoint&fit=crop&fp-x=0.9286&fp-y=0.1021&fp-z=2.9193&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=733&mark-y=209&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz00MzQmaD0xMTAmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D)
-
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/a2d6d12e-76c5-4ebf-9c25-18140e660f5c)
 
 ### 7. Click on Commit message
-![Step 7 screenshot](https://images.tango.us/workflows/55d4c68e-40d1-486e-9c72-8d906266f517/steps/da42bc50-bf59-408b-828c-0b39351e1b91/20999cca-ff42-43f3-aa9c-5087397fe69a.png?crop=focalpoint&fit=crop&fp-x=0.5000&fp-y=0.3489&fp-z=1.5236&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=274&mark-y=415&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz02NTImaD01NSZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
-
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/abed567c-93f5-4e4f-9791-6079d674ad96)
 
 ### 8. Select Create a new branch for this commit and start a pull request…
-![Step 8 screenshot](https://images.tango.us/workflows/55d4c68e-40d1-486e-9c72-8d906266f517/steps/0ed16983-68cd-4821-8034-8f8bb329caf4/149b3c8a-7734-412b-8996-5123ca3468de.png?crop=focalpoint&fit=crop&fp-x=0.3305&fp-y=0.6234&fp-z=3.0719&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=565&mark-y=408&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz02OSZoPTY5JmZpdD1jcm9wJmNvcm5lci1yYWRpdXM9MTA%3D)
-
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/1e01db64-fa40-4265-a273-cc3211287ae0)
 
 ### 9. Type "prepare-workflow"
-![Step 9 screenshot](https://images.tango.us/workflows/55d4c68e-40d1-486e-9c72-8d906266f517/steps/f01e1a56-e668-4146-8e62-df5da33b0909/46c0f48e-08de-419f-9f72-881b7d2f2b12.png?crop=focalpoint&fit=crop&fp-x=0.5141&fp-y=0.6830&fp-z=1.6584&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=299&mark-y=413&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz02MDMmaD01OSZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/1ed1c61a-cc55-4a06-aa24-0b872b5ab9c5)
 
 
 ### 10. Click on Propose changes
-![Step 10 screenshot](https://images.tango.us/workflows/55d4c68e-40d1-486e-9c72-8d906266f517/steps/16ea98c0-70c0-433b-abf8-6d35fd9a5b7c/1bf4e7ec-9ab5-4a1a-99b5-3501b5d8e9dd.png?crop=focalpoint&fit=crop&fp-x=0.6205&fp-y=0.7521&fp-z=2.3983&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=432&mark-y=398&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz0zMzcmaD05MCZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
-
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/9362cc76-c807-43cb-b45d-f593357b3898)
 
 ### 11. Click on base: main
-![Step 11 screenshot](https://images.tango.us/workflows/55d4c68e-40d1-486e-9c72-8d906266f517/steps/f1e80952-dbfe-47b3-a222-c0dc664f2100/02526868-8239-4333-9676-d491ee485174.png?crop=focalpoint&fit=crop&fp-x=0.0969&fp-y=0.2479&fp-z=2.6366&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=181&mark-y=398&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz0yNTEmaD04OSZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
-
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/fc390785-23e0-4ab3-90d4-7e741b4c5667)
 
 ### 12. Click on main…
-![Step 12 screenshot](https://images.tango.us/workflows/55d4c68e-40d1-486e-9c72-8d906266f517/steps/d52edf03-43de-4859-9a56-f67710c5b7c8/546d3995-ce1c-4554-8241-615b0b91452a.png?crop=focalpoint&fit=crop&fp-x=0.1782&fp-y=0.4154&fp-z=1.8512&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=129&mark-y=405&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz01MzQmaD03NSZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
-
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/cd64fe58-a591-4112-801e-6ad3b16b7e95)
 
 ### 13. Click on Create pull request
-![Step 13 screenshot](https://images.tango.us/workflows/55d4c68e-40d1-486e-9c72-8d906266f517/steps/5bf714c6-71a2-4a9b-8a40-fdf986556551/fd12c702-7943-4091-939d-3e46afddbb8d.png?crop=focalpoint&fit=crop&fp-x=0.8987&fp-y=0.3287&fp-z=2.9193&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=614&mark-y=388&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz00NjImaD0xMTAmZml0PWNyb3AmY29ybmVyLXJhZGl1cz0xMA%3D%3D)
-
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/7ce5e6a6-e8e9-4de4-b744-effb62104db8)
 
 ### 14. Click on Create pull request
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/d2832112-5bce-45db-a6b2-d131a46f9399)
