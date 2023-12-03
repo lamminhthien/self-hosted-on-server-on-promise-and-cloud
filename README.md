@@ -174,6 +174,34 @@ Overall, this script updates the package lists, installs Docker and Nginx, grant
 # [GitHub: Step-by-Step Instructions for Setting Up a Workflow](https://app.tango.us/app/workflow/55d4c68e-40d1-486e-9c72-8d906266f517?utm_source=markdown&utm_medium=markdown&utm_campaign=workflow%20export%20links)
 ## Setup Github Action Workflow first
 
+This code is a GitHub Actions workflow that automates the deployment of a project to a server in a staging environment. Let's go through the code step by step to understand its functionality:
+
+1. The code starts by defining the environment variables. The `APP_ENV` variable is set to the value stored in the `STAGING` secret.
+
+2. The workflow is triggered when a push event occurs on the `main` branch.
+
+3. The `build-and-deploy` job is defined, which runs on an `ubuntu-latest` machine.
+
+4. The steps of the job are as follows:
+
+   a. **Pull code**: This step uses the `actions/checkout` action to fetch the latest code from the repository.
+
+   b. **Extract env file multi line**: This step creates an environment file (`.env`) based on the `APP_ENV` value. It removes any existing `.env` file, creates a temporary file (`.env_temp`), writes the `APP_ENV` value to it, converts spaces to newlines, and appends the contents to the final `.env` file. Finally, it removes the temporary file.
+
+   c. **Docker**: This step builds a Docker image for the project using the `docker build` command. It then saves the image as a tar file (`your-project-name.tar`).
+
+   d. **Copy Docker image to ec2 use SSH Key**: This step uses the `appleboy/scp-action` action to copy the Docker image tar file and the `docker-compose.yml` file to the target server. It connects to the server using SSH, specified by the `STAGE_SERVER_HOST`, `STAGE_SERVER_KEY_SSH`, and other credentials stored as secrets.
+
+   e. **Executing remote ssh commands using SSH Key**: This step uses the `appleboy/ssh-action` action to execute remote SSH commands on the target server. It connects to the server using SSH and runs the following commands:
+      - `sudo docker system prune -a -f`: Cleans up any unused Docker resources on the server.
+      - `cd ~/your-project-name`: Changes the directory to the project directory on the server.
+      - `sudo snap install docker`: Installs Docker on the server (if not already installed).
+      - `sudo docker load --input your-project-name.tar`: Loads the Docker image from the tar file.
+      - `sudo docker-compose up -d --force-recreate`: Starts the project using Docker Compose, recreating containers if necessary.
+      - `rm -rf your-project-name.tar`: Removes the Docker image tar file from the server.
+
+This workflow automates the process of building a Docker image, copying it to a server, and deploying the project using Docker Compose. It ensures consistency and simplifies the deployment process in a staging environment.
+
 ### 1. Click on Actions
 ![Step 1 screenshot](https://images.tango.us/workflows/55d4c68e-40d1-486e-9c72-8d906266f517/steps/81556aef-7e5b-4bb4-ad93-e94b97468437/f8b0bc1b-d662-4041-908d-e85eebe0e4b8.png?crop=focalpoint&fit=crop&fp-x=0.2916&fp-y=0.0851&fp-z=2.6475&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=477&mark-y=152&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz0yNDcmaD05NSZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
 
@@ -231,7 +259,7 @@ secrets.STAGING
 secrets.STAGE_SERVER_HOST
 secrets.STAGE_SERVER_KEY_SSH
 
-Note that all of secret key in Github Action workflow must set up on Settings for each repo before use it in Github Action
+Note that all of secret key in Github Action workflow must set up on Settings for each repo before use it in Github Action.
 
 ### 1. Click on Settings
 ![Step 1 screenshot](https://images.tango.us/workflows/be8b220c-72bf-44da-8094-aac7667c044d/steps/152ff14d-4637-4fba-ba98-d8c09ecaa25b/b50e8fd2-1b7d-4607-bc75-9cb1c07a619d.png?crop=focalpoint&fit=crop&fp-x=0.5674&fp-y=0.0825&fp-z=2.7289&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=491&mark-y=128&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTQlMkNGRjc0NDImdz0yMTgmaD04MCZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
