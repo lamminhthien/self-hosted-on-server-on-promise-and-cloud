@@ -6,7 +6,7 @@ II. [Create and attach Elastic IPs to EC2](https://github.com/lamminhthien/self-
 
 III. [Create Github Action Workflow](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud#setup-github-action-workflow-first)
 
-IV. [Setup some secret variable key for your app and deployment]()
+IV. [Managing Secrets and Variables in GitHub Actions](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud#managing-secrets-and-variables-in-github-actions)
 
 ## I. Create and EC2 on AWS
 
