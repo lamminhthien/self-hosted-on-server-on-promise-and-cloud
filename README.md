@@ -11,19 +11,17 @@ IV. [Managing Secrets and Variables in GitHub Actions](https://github.com/lammin
 ## I. Create and EC2 on AWS
 
 ### 1. Type "EC2"
-![Step 1 screenshot](https://images.tango.us/workflows/6c8c03a1-e2d9-49ca-9c8b-c96b736b5e52/steps/de2daf92-ba1d-4483-951e-e2fbe48ada52/d01b25f2-19af-4142-ba4b-afe641183521.png?crop=focalpoint&fit=crop&fp-x=0.3130&fp-y=0.0271&fp-z=1.5599&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=267&mark-y=7&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz02MzgmaD02MiZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
-
+![Step 1](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/f267946a-9653-4f66-a5e4-5a310fe5e2cc)
 
 ### 2. Click on EC2
-![Step 2 screenshot](https://images.tango.us/workflows/6c8c03a1-e2d9-49ca-9c8b-c96b736b5e52/steps/0225e2b3-dcbb-48c5-9494-87e69232401c/4acebbb8-dfb1-47dd-9896-3a6c450d7a90.png?crop=focalpoint&fit=crop&fp-x=0.4243&fp-y=0.2492&fp-z=2.9962&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=539&mark-y=402&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz0xMjEmaD04MCZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
-
+![Step 2](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/8e8c2495-e8a1-41c9-a98f-aa5249079ed9)
 
 ### 3. Click on Launch instance
-![Step 3 screenshot](https://images.tango.us/workflows/6c8c03a1-e2d9-49ca-9c8b-c96b736b5e52/steps/686d8423-1e73-4e30-b291-a4209a8f0281/58699548-c24a-4244-8f20-ffe9cfc7523d.png?crop=focalpoint&fit=crop&fp-x=0.3224&fp-y=0.6319&fp-z=2.3050&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=415&mark-y=395&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz0zNzAmaD05NiZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
-
+![Launch Instance](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/5c422d66-b368-433b-b64a-2cc2dbda98e6)
 
 ### 4. Type a name for your server
-![Step 4 screenshot](https://images.tango.us/workflows/6c8c03a1-e2d9-49ca-9c8b-c96b736b5e52/steps/9a4e096c-f943-457f-8481-6465f34f04a1/c8f31aa1-d393-4e0c-b5a2-bf41f2773abd.png?crop=focalpoint&fit=crop&fp-x=0.3303&fp-y=0.4330&fp-z=1.2580&w=1200&border=2%2CF4F2F7&border-radius=8%2C8%2C8%2C8&border-radius-inner=8%2C8%2C8%2C8&blend-align=bottom&blend-mode=normal&blend-x=0&blend-w=1200&blend64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL21hZGUtd2l0aC10YW5nby13YXRlcm1hcmstdjIucG5n&mark-x=125&mark-y=417&m64=aHR0cHM6Ly9pbWFnZXMudGFuZ28udXMvc3RhdGljL2JsYW5rLnBuZz9tYXNrPWNvcm5lcnMmYm9yZGVyPTYlMkNGRjc0NDImdz03NDcmaD01MiZmaXQ9Y3JvcCZjb3JuZXItcmFkaXVzPTEw)
+![Type a name for your server](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/cd8abe02-ec57-481b-b12c-06052f775d89)
+
 
 
 ### 5. Choose Ubutnu
