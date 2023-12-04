@@ -19,6 +19,9 @@ VIII [Setup Portainer for monitor, manage and log on Docker Containers](https://
 IX [Setup Domain on namecheap](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/tree/main#setup-domain-on-namecheap)
 
 X [Setup SSL](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/blob/main/README.md#setup-ssl)
+
+XI [Cloudwatch Alarm CPU High and send email (Youtube)](https://www.youtube.com/watch?v=mcV1idfCXOo)
+
 ## I. Create and EC2 on AWS
 
 ### 1. Type "EC2" and Select it.
