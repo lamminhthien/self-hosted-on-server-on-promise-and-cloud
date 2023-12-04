@@ -380,8 +380,8 @@ server {
 
 #Stage Todooy FE: point stage-todooy-fe.todooy.com to port 3000
 server {
-        listen 443 ssl;
-        listen [::]:443 ssl;
+        # listen 443 ssl;
+        # listen [::]:443 ssl;
 
         server_name stage-todooy-fe.todooy.com http://stage-todooy-fe.todooy.com;
         # Certificate
@@ -419,6 +419,10 @@ Successfully received certificate.
 Certificate is saved at: /etc/letsencrypt/live/test.todooy.com/fullchain.pem
 Key is saved at:         /etc/letsencrypt/live/test.todooy.com/privkey.pem
 ```
+
+and uncomment two line:
+listen 443 ssl
+listen [::]:443 ssl
 
 ## Copy paths of both certificate and key, then paste it in nginx configuration using command
 ```bash
