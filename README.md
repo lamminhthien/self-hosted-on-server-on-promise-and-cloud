@@ -273,13 +273,13 @@ Note that all of secret key in Github Action workflow must set up on Settings fo
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/9d130217-8093-43a5-8986-8fd71bad6d40)
 
 ## Prepare Dockerfile and docker-compose:
-Make sure your image name is the same as tar file name, which created by docker build command in Build Stage. You can see some picture below for more detail
+Both file are available in this repository.Make sure your image name is the same as tar file name, which created by docker build command in Build Stage in Github Action. You can see some picture below for more detail
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/ed34d906-30b4-4fd0-ba61-feba6fc6439f)
 
 ## After complete all, we can merge pull request set up github action and ready for deploy to Server EC2.
 
 ## How to open port for testing web, and prepare for using Portainer later, setup Security Group.
-### In page detail of EC2, Select Tab "Security". Choose a Security Group
+### In page detail of EC2, Select Tab "Security". Choose a Security Group.
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/d013095d-d048-48a1-8d28-56ca211299c2)
 
 ### Click on Inbound rules
@@ -299,7 +299,6 @@ Make sure your image name is the same as tar file name, which created by docker 
 
 ### Change CIDR Blocks to 0.0.0.0
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/2c3efdc6-bbd8-4c02-b240-f7e1e51200e6)
-![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/7fa0d543-4f68-405a-a878-19fa21326db5)
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/003e9755-389f-4334-9084-cf71462ede8a)
 
 ### Save Rules
