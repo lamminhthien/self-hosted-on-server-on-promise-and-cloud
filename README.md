@@ -18,11 +18,8 @@ VII [Setup Portainer for monitor, manage and log on Docker Containers](https://g
 
 ## I. Create and EC2 on AWS
 
-### 1. Type "EC2"
+### 1. Type "EC2" and Select it.
 ![Step 1](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/f267946a-9653-4f66-a5e4-5a310fe5e2cc)
-
-### 2. Click on EC2
-![Step 2](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/8e8c2495-e8a1-41c9-a98f-aa5249079ed9)
 
 ### 3. Click on Launch instance
 ![Launch Instance](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/5c422d66-b368-433b-b64a-2cc2dbda98e6)
@@ -30,59 +27,53 @@ VII [Setup Portainer for monitor, manage and log on Docker Containers](https://g
 ### 4. Type a name for your server
 ![Type a name for your server](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/cd8abe02-ec57-481b-b12c-06052f775d89)
 
-### 5. Choose Ubutnu
-![Choose Ubuntu](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/120a5658-99fb-4d45-8c40-6bbfd7a3a240)
-
-### 6. Choose Amazon Machine Image (AMI)
+### 5. Choose Ubutnu and Choose Amazon Machine Image (AMI)
 ![Choose AMI](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/a2b0d0c3-063b-4827-91f5-8369cca28d28)
 
-
-### 7. Choose Instance type
+### 6. Choose Instance type
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/6776335a-4a28-4b6e-83ec-313a7395f30b)
 
-### 8. Searching t3.medium for server with 2vCPU and 4GB Ram.
+### 7. Searching t3.medium for server with 2vCPU and 4GB Ram.
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/fd6651d9-90ad-4bd9-9fed-ee610ae5a668)
 
 
-### 9. Click on t3.medium. If you want more RAM, you can choose t3.large.
+### 8. Click on t3.medium. If you want more RAM, you can choose t3.large.
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/bf67db81-b919-4370-a320-6c90fa8a7f81)
 
-### 10. Key pair (login). Click create new key pair. This will use for login to server and using in CI/CD
+### 9. Key pair (login). Click create new key pair. This will use for login to server and using in CI/CD
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/662687f1-d21b-40b8-9a8f-e0d236433eb4)
 
-### 11. Type Key pair name. Example "self-hosted"
+### 10. Type Key pair name. Example "self-hosted"
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/c4983642-cb88-47eb-9390-cd3e603d3a2f)
 
-### 12. Click on Create key pair in this popup
+### 11. Click on Create key pair in this popup
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/19a20a0a-ecf7-4f3a-aa57-6f7468c41d96)
 
 
-### 13. Check Allow HTTPS traffic from the internet (For SSL later)
+### 12. Check Allow HTTPS traffic from the internet (For SSL later)
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/3c23f45b-fcf0-4184-88ff-490c6096814e)
 
-### 14. Check Allow HTTP traffic from the internet (For port 80)
+### 13. Check Allow HTTP traffic from the internet (For port 80)
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/93ff80a9-7247-4f05-ad90-77ff48cef859)
 
-### 15. Choose storage size for SSD in "EBS Volumes". Example 32GB
+### 14. Choose storage size for SSD in "EBS Volumes". Example 32GB
 
-
-
-### 16. Change Volume type (SSD Type).
+### 15. Change Volume type (SSD Type).
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/a28f5f8c-b129-4fdd-95e9-1da0cfdc9f05)
 
-### 17. Click on General purpose SSD (gp3)…
+### 16. Click on General purpose SSD (gp3)…
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/d12dd355-9de5-4296-8b26-2f48155a846e)
 
-### 18. Click on Advanced details. To setup terminate protection, Cloudwatch Detailed Monitoring and UserData (For preinstall some of software we need)
+### 17. Click on Advanced details. To setup terminate protection, Cloudwatch Detailed Monitoring and UserData (For preinstall some of software we need)
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/72f03804-500d-4521-a97c-2be55828e2f3)
 
-### 19. Enable Termination protection
+### 18. Enable Termination protection
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/94eb22dd-26b9-4779-92f8-caa483892d4e)
 
-### 20. Enable Detailed CloudWatch monitoring
+### 19. Enable Detailed CloudWatch monitoring
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/1a7f89cb-46f4-4192-80c9-0499407f698e)
 
-### 21. Scrolldown to User data - optional
+### 20. Scrolldown to User data - optional
 
 Add this content below:
 
