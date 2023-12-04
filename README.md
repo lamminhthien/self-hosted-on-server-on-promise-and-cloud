@@ -1,4 +1,4 @@
-# Tutorial: Self-Hosted Node.js App Deployment on On-Premise and Cloud Servers with CI/CD
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/fa643b99-08c0-45c8-900d-b8db39773b22)![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/f50c73e1-f3ab-4a51-8d28-16582d8ab4b6)![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/c0994183-8d06-41af-95c3-d6da60d8713f)# Tutorial: Self-Hosted Node.js App Deployment on On-Premise and Cloud Servers with CI/CD
 # Section
 I. [Create an EC2 on AWS](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud#attach-static-ip-may-be-in-other-cloud-platform-in-vietnam-static-ip-will-be-available-by-default)
 
@@ -286,7 +286,33 @@ Make sure your image name is the same as tar file name, which created by docker 
 
 ## After complete all, we can merge pull request set up github action and ready for deploy to Server EC2.
 
-## How to open port for testing web, and prepare for using Portainer later.
+## How to open port for testing web, and prepare for using Portainer later, setup Security Group.
+### In page detail of EC2, Select Tab "Security". Choose a Security Group
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/d013095d-d048-48a1-8d28-56ca211299c2)
+
+### Click on Inbound rules
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/061a243e-6164-4ad8-8180-fcf18b5d5a87)
+
+### Click on Edit inbound rules
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/477268b7-d16b-4e14-a3cc-259245186c8c)
+
+### Click Add Rule
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/4177587d-0429-4533-901b-89b1fd725a51)
+
+### Choose Custom TCP
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/a16785bb-101a-41ca-9233-0becc64480c8)
+
+### Choose suitable Port, example 3000
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/3b3a8a8a-f195-442d-b01a-136fd5c2ffea)
+
+### Change CIDR Blocks to 0.0.0.0
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/2c3efdc6-bbd8-4c02-b240-f7e1e51200e6)
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/7fa0d543-4f68-405a-a878-19fa21326db5)
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/003e9755-389f-4334-9084-cf71462ede8a)
+
+### Save Rules
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/5e423ae7-1a2b-48b7-a970-5cba9d342b57)
+
 
 ## Setup Nginx and SSL
 
