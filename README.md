@@ -20,7 +20,9 @@ IX [Setup Domain on namecheap](https://github.com/lamminhthien/self-hosted-on-se
 
 X [Setup SSL](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/blob/main/README.md#setup-ssl)
 
-XI [Cloudwatch Alarm CPU High and send email (Youtube)](https://www.youtube.com/watch?v=mcV1idfCXOo)
+XI [Cloudwatch Alarm CPU High and send email (Youtube) (AWS Only)](https://www.youtube.com/watch?v=mcV1idfCXOo)
+
+XII [Promethus + Grafana to monitor CPU, RAM, etc (AWS or Any Cloud Provider like ViettelHost , Vietnix)](https://viblo.asia/p/monitor-cach-giam-sat-he-thong-don-gian-voi-prometheus-va-grafana-BQyJKjW54Me)
 
 ## I. Create and EC2 on AWS
 
