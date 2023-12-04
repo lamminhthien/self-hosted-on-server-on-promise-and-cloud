@@ -1,4 +1,4 @@
-![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/fa643b99-08c0-45c8-900d-b8db39773b22)![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/f50c73e1-f3ab-4a51-8d28-16582d8ab4b6)![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/c0994183-8d06-41af-95c3-d6da60d8713f)# Tutorial: Self-Hosted Node.js App Deployment on On-Premise and Cloud Servers with CI/CD
+# Tutorial: Self-Hosted Node.js App Deployment on On-Premise and Cloud Servers with CI/CD
 # Section
 I. [Create an EC2 on AWS](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud#attach-static-ip-may-be-in-other-cloud-platform-in-vietnam-static-ip-will-be-available-by-default)
 
