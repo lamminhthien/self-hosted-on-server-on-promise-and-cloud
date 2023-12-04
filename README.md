@@ -18,7 +18,7 @@ VIII [Setup Portainer for monitor, manage and log on Docker Containers](https://
 
 IX [Setup Domain on namecheap]()
 
-X [Setup SSL]()
+X [Setup SSL](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/blob/main/README.md#setup-ssl)
 ## I. Create and EC2 on AWS
 
 ### 1. Type "EC2" and Select it.
