@@ -1,4 +1,4 @@
-# Tutorial: Self-Hosted Node.js App Deployment on On-Premise and Cloud Servers with CI/CD
+# Tutorial: Self-Hosted Node.js App Deployment on AWS EC2 or On-Premise and other Cloud Servers with CI/CD
 # Section
 I. [Create an EC2 on AWS](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud#attach-static-ip-may-be-in-other-cloud-platform-in-vietnam-static-ip-will-be-available-by-default)
 
