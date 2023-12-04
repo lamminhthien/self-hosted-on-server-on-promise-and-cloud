@@ -39,10 +39,7 @@ X [Setup SSL](https://github.com/lamminhthien/self-hosted-on-server-on-promise-a
 ### 7. Searching t3.medium for server with 2vCPU and 4GB Ram.
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/fd6651d9-90ad-4bd9-9fed-ee610ae5a668)
 
-
 ### 8. Click on t3.medium. If you want more RAM, you can choose t3.large.
-![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/bf67db81-b919-4370-a320-6c90fa8a7f81)
-
 ### 9. Key pair (login). Click create new key pair. This will use for login to server and using in CI/CD
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/662687f1-d21b-40b8-9a8f-e0d236433eb4)
 
@@ -51,7 +48,6 @@ X [Setup SSL](https://github.com/lamminhthien/self-hosted-on-server-on-promise-a
 
 ### 11. Click on Create key pair in this popup
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/19a20a0a-ecf7-4f3a-aa57-6f7468c41d96)
-
 
 ### 12. Check Allow HTTPS traffic from the internet (For SSL later)
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/3c23f45b-fcf0-4184-88ff-490c6096814e)
