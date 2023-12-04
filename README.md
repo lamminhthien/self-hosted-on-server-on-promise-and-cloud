@@ -420,7 +420,7 @@ Certificate is saved at: /etc/letsencrypt/live/test.todooy.com/fullchain.pem
 Key is saved at:         /etc/letsencrypt/live/test.todooy.com/privkey.pem
 ```
 
-and uncomment two line:
+## Uncomment two line of listen 443 ssl
 listen 443 ssl
 listen [::]:443 ssl
 
