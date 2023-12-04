@@ -12,7 +12,9 @@ V. [Prepare Dockerfile and docker-compose-ssh.yml](https://github.com/lamminhthi
 
 VI. [Ready for deploy](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/blob/main/README.md#prepare-dockerfile-and-docker-compose)
 
-VII [Setup Portainer for monitor, manage and log on Docker Containers]()
+VII. [Setup Security Group to open port for testing](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/blob/main/README.md#after-complete-all-we-can-merge-pull-request-set-up-github-action-and-ready-for-deploy-to-server-ec2)
+
+VII [Setup Portainer for monitor, manage and log on Docker Containers](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/blob/main/README.md#setup-portainer-ce-for-manager-logging-docker-container)
 
 ## I. Create and EC2 on AWS
 
@@ -318,5 +320,38 @@ Make sure your image name is the same as tar file name, which created by docker 
 
 ## Setup Portainer CE for manager, logging Docker Container:
 https://docs.portainer.io/start/install-ce/server/docker/linux#deployment
+
+### Command to setup
+docker volume create portainer_data
+docker run -d -p 8000:8000 -p 9000:9000 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
+
+### Using
+http://localhost:9000 or http://<ip_address>:9000
+
+### Login UI
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/98f578bb-9c63-46de-ab27-ba7596337036)
+
+### Main UI
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/bfbbe12e-acd6-469e-a71a-477702d8bedb)
+
+### Container List
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/9f98eeaa-29db-453b-a70c-daa4b171f058)
+
+### View Detail Environment 
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/91b60c82-0b40-4fb0-8b85-b4adf77a01f9)
+
+### Checking status, logs, stat
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/68e75f28-4f17-4d3d-be95-5efe9f06b9be)
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/ce8339a9-9d97-4b10-a915-af56f8ebf179)
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/d6ddc48a-c6ff-46d2-8a53-d1ae1d8429a7)
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/00922dd0-4650-4631-bcb9-079ebd87b45c)
+
+
+
+
+
+
+
+
 
 
