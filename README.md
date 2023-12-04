@@ -16,7 +16,7 @@ VII. [Setup Security Group to open port for testing](https://github.com/lamminht
 
 VIII [Setup Portainer for monitor, manage and log on Docker Containers](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/blob/main/README.md#setup-portainer-ce-for-manager-logging-docker-container)
 
-IX [Setup Domain on namecheap]()
+IX [Setup Domain on namecheap](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/tree/main#setup-domain-on-namecheap)
 
 X [Setup SSL](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/blob/main/README.md#setup-ssl)
 ## I. Create and EC2 on AWS
@@ -343,8 +343,20 @@ http://localhost:9000 or http://<ip_address>:9000
 
 ## Setup Domain on Namecheap
 ### Copy Your Elastic IPs
-### Login Namecheap
-### 
+### Login Namecheap and choose your domain to manage
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/49dea789-30e1-41e2-9642-16a24e854e30)
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/f15756d7-027f-4674-861e-7448778d0b1c)
+### Click Advanced DNS
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/6a13a9ae-4418-4aaf-9882-2501e7e7701d)
+### Add new Record
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/15a3108d-1441-42b6-b1d1-86b5f8489df3)
+### Choose A Record
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/dc30f170-9ce0-42b7-9df3-d2b7988ea5d3)
+### Type wildcard domain name: Example "test" mean "test.todooy.com"
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/646f0abe-a3c3-4e62-851d-c343e77ba103)
+### Type your Elastic IP which you copied and click green ticked to save
+![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/3466d433-15bf-4732-b763-50736847de6f)
+
 
 ## Setup SSL
 ### Connect to your Server:
