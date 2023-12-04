@@ -429,6 +429,9 @@ listen [::]:443 ssl
 sudo nano /etc/nginx/sites-enabled/your-domain-you-want-use
 ```
 
+## Restart Nginx Server
+sudo service nginx restart
+
 
 
 
