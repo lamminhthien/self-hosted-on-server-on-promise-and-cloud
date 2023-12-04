@@ -14,8 +14,11 @@ VI. [Ready for deploy](https://github.com/lamminhthien/self-hosted-on-server-on-
 
 VII. [Setup Security Group to open port for testing](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/blob/main/README.md#after-complete-all-we-can-merge-pull-request-set-up-github-action-and-ready-for-deploy-to-server-ec2)
 
-VII [Setup Portainer for monitor, manage and log on Docker Containers](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/blob/main/README.md#setup-portainer-ce-for-manager-logging-docker-container)
+VIII [Setup Portainer for monitor, manage and log on Docker Containers](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/blob/main/README.md#setup-portainer-ce-for-manager-logging-docker-container)
 
+IX [Setup Domain on namecheap]()
+
+X [Setup SSL]()
 ## I. Create and EC2 on AWS
 
 ### 1. Type "EC2" and Select it.
@@ -336,6 +339,49 @@ http://localhost:9000 or http://<ip_address>:9000
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/ce8339a9-9d97-4b10-a915-af56f8ebf179)
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/d6ddc48a-c6ff-46d2-8a53-d1ae1d8429a7)
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/00922dd0-4650-4631-bcb9-079ebd87b45c)
+
+
+## Setup Domain on Namecheap
+### Copy Your Elastic IPs
+### Login Namecheap
+### 
+
+## Setup SSL
+### Connect to your Server:
+
+### Create an config file with command line
+sudo nano /etc/nginx/sites-enabled/your-domain-you-want-use
+
+### Config nginx with example file config below
+```bash
+# Stage Todooy FE: force ssl for stage-todooy-fe.todooy.com (stage todooy fe)
+# Copy it into /etc/nginx/sites-enabled/your-domain-you-want-use
+server {
+        listen 80;
+        server_name stage-todooy-fe.todooy.com;
+        return 301 https://stage-todooy-fe.todooy.com$request_uri;
+}
+
+#Stage Todooy FE: point stage-todooy-fe.todooy.com to port 3000
+server {
+        listen 443 ssl;
+        listen [::]:443 ssl;
+
+        server_name stage-todooy-fe.todooy.com http://stage-todooy-fe.todooy.com;
+        # Certificate
+        # ssl_certificate /etc/letsencrypt/live/stage-todooy-fe.todooy.com/fullchain.pem;
+
+        # Private Key
+        # ssl_certificate_key /etc/letsencrypt/live/stage-todooy-fe.todooy.com/privkey.pem;
+        location / {
+              proxy_pass http://localhost:3000;
+              proxy_set_header Host $host;
+              proxy_set_header X-Real-IP $remote_addr;
+              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+              proxy_set_header X-Forwarded-Proto $scheme;
+        }
+}
+```
 
 
 
