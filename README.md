@@ -434,7 +434,9 @@ sudo nano /etc/nginx/sites-enabled/your-domain-you-want-use
 ```
 
 ## Restart Nginx Server
+```bash
 sudo service nginx restart
+```
 
 
 
