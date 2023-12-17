@@ -370,10 +370,21 @@ sudo nano /etc/nginx/sites-enabled/your-domain-you-want-use
 
 ### Generate certbot certificate with simple command:
 In case, you don’t have any web server running on your system. You can --standalone option to complete the domain validation by stating a dummy web server. This option needs to bind to port 80 in order to perform domain validation.
+
+Temporary stop nginx with command
+```bash
+sudo service nginx stop
+```
+
 ```bash
 sudo certbot certonly --standalone
 ```
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/74acc45c-e991-4b70-875c-9e8df0d7af76)
+
+Start Nginx again
+```bash
+sudo service nginx start
+```
 
 
 ### Config nginx with example file config below
