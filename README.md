@@ -407,7 +407,7 @@ server {
         ssl_certificate /etc/letsencrypt/live/yourdomain.com/fullchain.pem;
 
         # Private Key
-        #ssl_certificate_key /etc/letsencrypt/live/yourdomain.com/privkey.pem;
+        ssl_certificate_key /etc/letsencrypt/live/yourdomain.com/privkey.pem;
         location / {
               client_max_body_size 5M;
               proxy_pass http://localhost:3000;
