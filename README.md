@@ -427,3 +427,5 @@ server {
 ```bash
 sudo service nginx restart
 ```
+
+## Create S3 with cloud formation
