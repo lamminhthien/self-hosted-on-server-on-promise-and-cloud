@@ -391,6 +391,12 @@ sudo service nginx start
 ```bash
 # Your Application Reverse Proxy: force ssl for yourdomain.com (Your Application Reverse Proxy)
 # Copy it into /etc/nginx/sites-enabled/your-domain-you-want-use
+upstream app {
+  server localhost:3000;
+  server localhost:3001;
+  server localhost:3002;
+}
+
 server {
         listen 80;
         server_name yourdomain.com;
@@ -410,7 +416,7 @@ server {
         ssl_certificate_key /etc/letsencrypt/live/yourdomain.com/privkey.pem;
         location / {
               client_max_body_size 5M;
-              proxy_pass http://localhost:3000;
+              proxy_pass http://app;
               proxy_set_header Host $host;
               proxy_http_version 1.1;
               proxy_set_header X-Real-IP $remote_addr;
