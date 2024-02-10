@@ -25,5 +25,8 @@ kubectl delete pod nestjs-deployment-8c8ff9b4f-nnj6l
 kubectl rollout restart deployment nestjs-deployment
 
 ## Dashboard
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
+kubectl apply -f kubernetes-dashboard-deployment.yaml
+kubectl -n kubernetes-dashboard apply -f admin-role.yaml
+kubectl -n kubernetes-dashboard get secret admin-user-secret -o jsonpath="{.data.token}" | base64 -d
+
 
