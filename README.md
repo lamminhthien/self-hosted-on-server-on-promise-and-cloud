@@ -174,9 +174,9 @@ This code is a GitHub Actions workflow that automates the deployment of a projec
       - `sudo docker system prune -a -f`: Cleans up any unused Docker resources on the server.
       - `cd ~/your-project-name`: Changes the directory to the project directory on the server.
       - `sudo snap install docker`: Installs Docker on the server (if not already installed).
-      - `sudo docker load --input your-project-name.tar`: Loads the Docker image from the tar file.
+      - `sudo docker load --inputnestjs-22.tar`: Loads the Docker image from the tar file.
       - `sudo docker-compose up -d --force-recreate`: Starts the project using Docker Compose, recreating containers if necessary.
-      - `rm -rf your-project-name.tar`: Removes the Docker image tar file from the server.
+      - `rm -rfnestjs-22.tar`: Removes the Docker image tar file from the server.
 
 This workflow automates the process of building a Docker image, copying it to a server, and deploying the project using Docker Compose. It ensures consistency and simplifies the deployment process in a staging environment.
 

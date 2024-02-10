@@ -51,4 +51,4 @@ COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/start.sh ./dist/start.sh
 
 EXPOSE 3000
-CMD ["./dist/start.sh"]
+CMD ["node","dist/main.js"]

@@ -28,8 +28,8 @@ jobs:
 
       - name: Docker
         run: |
-          docker build -t your-project-name .
-          docker save -o your-project-name.tar your-project-name
+          docker build -t nestjs-22 .
+          docker save -o nestjs-22.tar nestjs-22
 
       - name: Copy Docker image to ec2 use SSH Key
         uses: appleboy/scp-action@v0.1.4
@@ -51,7 +51,7 @@ jobs:
           script_stop: true
           script: |
             cd ~/your-project-name
-            sudo docker load --input your-project-name.tar
+            sudo docker load --input nestjs-22.tar
             sudo docker-compose -f docker-compose-ssh.yml  up -d --force-recreate
-            rm -rf your-project-name.tar
+            rm -rf nestjs-22.tar
             sudo docker image prune -a -f

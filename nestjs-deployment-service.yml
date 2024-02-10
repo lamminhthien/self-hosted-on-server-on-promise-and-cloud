@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+# ở đây phiên bản cũ hơn của kubernetes có dạng extensions/v1beta1
+kind: Deployment
+# kind là loại Deployment
+metadata:
+  name: nestjs-deployment
+spec:
+  replicas: 2
+  # replica ở đây sẽ tạo ra 2 pods luôn luôn chạy, khi một số pods bị down hay chết hay bất kì lý do nào đó sẽ tự động tạo lại số lượng pods bằng 2
+  selector:
+    matchLabels:
+      app: nestjs-deployment
+  template:
+    metadata:
+      labels:
+        app: nestjs-deployment
+    spec:
+      containers:
+      - name: nestjs-deployment
+      # image của container docker
+        image: nestjs-22:latest
+        imagePullPolicy: Never
+        ports:
+        # port bên trong container
+        - containerPort: 3000
+---
+apiVersion: v1
+# kind là loại Service
+kind: Service
+metadata:
+  name: nestjs-svc
+spec:
+  ports:
+  # port bên ngoài của pods mà các pods có thể giao tiếp được với nhau
+  - port: 80
+  # port target với 3000 của deployment
+    targetPort: 3000
+    protocol: TCP
+    name: http
+  selector:
+  # dựa theo app : nestjs-deployment ở labels trên kia sẽ map với service này
+    app: nestjs-deployment
+  type: ClusterIP
