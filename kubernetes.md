@@ -23,3 +23,7 @@ kubectl get service --all-namespaces
 kubectl delete pod nestjs-deployment-8c8ff9b4f-nnj6l
 
 kubectl rollout restart deployment nestjs-deployment
+
+## Dashboard
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
+
