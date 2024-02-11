@@ -2,10 +2,10 @@ version: "3"
 
 services:
   app:
-    image: nestjs-22
+    image: nestjs-22:latest
     restart: always
     ports:
-      - 3000-3001:3000
+      - 3000:3000
     deploy:
       mode: replicated
       replicas: 2

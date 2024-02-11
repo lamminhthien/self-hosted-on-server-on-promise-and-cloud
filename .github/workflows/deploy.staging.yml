@@ -45,7 +45,7 @@ jobs:
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.STAGE_SERVER_HOST }}
-          username: ubuntu
+          username: lamminhthien02012000
           port: 22
           key: ${{ secrets.STAGE_SERVER_KEY_SSH }}
           script_stop: true

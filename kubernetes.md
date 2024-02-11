@@ -51,7 +51,7 @@ Try microk8s enable --help for a list of available services and optional feature
 microk8s kubectl get all --all-namespaces
 If you mainly use MicroK8s you can make our kubectl the default one on your command-line with alias mkctl="microk8s kubectl". Since it is a standard upstream kubectl, you can also drive other Kubernetes clusters with it by pointing to the respective kubeconfig file via the --kubeconfig argument.
 
-## Access the Kubernetes dashboard
+## Access the Kubernetes dashboard proxy
 microk8s dashboard-proxy
 
 ## Start and stop Kubernetes to save battery
@@ -59,9 +59,25 @@ Kubernetes is a collection of system services that talk to each other all the ti
 
 ## Access dashboard without proxy
 https://garywoodfine.com/how-to-access-microk8s-dashboard-without-proxy/
+microk8s kubectl -n kube-system edit service kubernetes-dashboard
+ Change type in specs to NodePort
+microk8s kubectl -n kube-system get services
+ see port for dashboard
+token=$(microk8s kubectl -n kube-system get secret | grep microk8s | cut -d " " -f1)
+microk8s kubectl -n kube-system describe secret $token
+
 
 
 ## Dashboard took a lot of ram so i want to have an enpoint to extracting log from local connect to kubernetes endpoint on server
 First we must test if kubernest still run ok
-whether if i ran multi app with the same expose port 80 but with different cluster ip, ah must be different name space, no no
+whether if i ran multi app with the same expose port 80 but with different cluster ip, ah must be different name space too
 
+## Github Action
+I think that we can remote connect kubernetes cluster by follow biz kubernetes engine blog
+I think if we don't use dashboard, we can use Github Action with appleboy ssh action to see log
+I think also we can 
+
+
+## Remote Connect with VSCode
+MicroK8s config file location:
+cat /var/snap/microk8s/current/credentials/client.config
