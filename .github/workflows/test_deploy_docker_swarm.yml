@@ -18,6 +18,6 @@ jobs:
           docker build -t nestjs-22 .
           docker service ls
           docker service update --force app_app
-          curl http://localhost:3000/aaaa
+          curl http://localhost:3000
 
 
