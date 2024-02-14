@@ -332,8 +332,10 @@ sudo apt install caddy -y
 sudo setcap CAP_NET_BIND_SERVICE=+eip $(which caddy)
 
 ### Restart Caddy server for take effect
+```bash
 caddy stop
 caddy start
+```
 
 ### Create Caddyfile config
 mkdir caddy-config && cd caddy-config
@@ -347,7 +349,9 @@ kuma.thienlam3.line.pm {
 Save this file
 
 ### Reload Caddy web server to apply domain name without downtime
+```bash
 caddy reload
+```
 
 ### Waiting about 2 to 15 minutes and then cerification obtained appear, and we are done.
 ## Create S3 with cloud formation
