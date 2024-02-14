@@ -210,38 +210,22 @@ Note that all of secret key in Github Action workflow must set up on Settings fo
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/2d23bc3f-f5b3-4b60-a515-2a48320d6349)
 
 ### 2. Click on Secrets and variables
-![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/faa968df-2e8d-4950-92ee-8e0281e634a2)
-
 ### 3. Click on Actions
-![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/ccdf1627-0441-47d0-b9e2-c8b7dcdd140a)
-
 ### 4. Click on New repository secret
-![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/ab3dc4c9-5daf-4e68-897e-c20c946d9a6e)
-
 ### 5. Type "STAGING"
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/04339100-1b22-4e18-bb5d-074523fe97f8)
-
 ### 6. Type "TEST=123"
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/ee89fa01-1320-4949-9b30-d38373df9d79)
 
 ### 7. Click on Add secret
-![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/ebcb90a6-7adb-43fa-b2c6-bfe0e6d41ecf)
-
 ### 8. Click on New repository secret
-![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/1ed6ceef-c8e7-441d-aabb-900adad6a3c1)
-
 ### 9. Paste "STAGE_SERVER_HOST" into input
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/d514cf03-837e-4d1a-88b2-e25f9213397a)
-
 ### 10. Type "abc-ap-south-east-1.ec2.com"
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/9e3b6e37-325f-4558-8bce-3d9388763aa9)
-
 ### 11. Click on Add secret
-![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/9f2f6338-6533-453c-b437-766b9a299a35)
 
 ### 12. Click on New repository secret
-![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/b04ba448-fe7d-4a7d-bdba-d9048086ab8f)
-
 ### 13. Paste "STAGE_SERVER_KEY_SSH" into input
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/67b68eda-a220-4acc-b773-569906459421)
 
@@ -249,9 +233,7 @@ Note that all of secret key in Github Action workflow must set up on Settings fo
 ### 14. Type "Your server key ssh copy from file pem. Must use vscode for copy key properly, don't use notepad or text editor"
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/83b47868-6005-4b41-8d27-dc9f545686dd)
 
-
 ### 15. Click on Add secret
-![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/9d130217-8093-43a5-8986-8fd71bad6d40)
 
 ## Prepare Dockerfile and docker-compose:
 Both file are available in this repository.Make sure your image name is the same as tar file name, which created by docker build command in Build Stage in Github Action. You can see some picture below for more detail
