@@ -85,36 +85,12 @@ Add this content below:
 #!/bin/bash
 sudo apt update -y
 
-# Install Docker and Nginx using Snap
+# Install Docker using Snap
 sudo snap install docker
-sudo snap install nginx
 
 # Grant permission for run Docker without root user
 sudo chmod 666 /var/run/docker.sock
-
-# Install Certbot for Let's Encrypt
-sudo apt install -y certbot python3-certbot-nginx
-sudo systemctl enable nginx
-sudo systemctl start nginx
 ```
-
-This code is a bash script that performs several tasks related to setting up a server environment. Let's break down each step:
-
-1. sudo apt update -y: This command updates the package lists on the server by fetching the latest version information from the repositories.
-
-2. sudo snap install docker: This command installs Docker, a popular platform for containerization, using the Snap package manager. Snap is a software deployment and package management system used in Ubuntu and other Linux distributions.
-
-3. sudo snap install nginx: This command installs Nginx, a high-performance web server and reverse proxy, also using the Snap package manager.
-
-4. sudo chmod 666 /var/run/docker.sock: This command grants read and write permissions to the Docker socket file, allowing Docker to be run without root user privileges. The Docker socket file is used for communication between the Docker daemon and the Docker client.
-
-5. sudo apt install -y certbot python3-certbot-nginx: This command installs Certbot, a tool for obtaining and managing SSL/TLS certificates from Let's Encrypt, along with the Certbot Nginx plugin. The Nginx plugin automates the process of configuring Nginx to use the obtained certificates.
-
-6. sudo systemctl enable nginx: This command enables the Nginx service to start automatically on system boot.
-
-7. sudo systemctl start nginx: This command starts the Nginx service immediately.
-
-Overall, this script updates the package lists, installs Docker and Nginx, grants Docker permissions, installs Certbot and the Certbot Nginx plugin, and starts the Nginx service. It sets up a basic server environment for hosting websites or applications with SSL/TLS encryption using Let's Encrypt certificates.
 
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/3a17ef63-65e8-48c4-a059-ec1873aba4b5)
 
@@ -310,7 +286,7 @@ Both file are available in this repository.Make sure your image name is the same
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/5e423ae7-1a2b-48b7-a970-5cba9d342b57)
 
 
-## Setup Nginx and SSL
+## Setup SSL with Caddy Web Server
 
 ## Setup Portainer CE for manager, logging Docker Container:
 https://docs.portainer.io/start/install-ce/server/docker/linux#deployment
@@ -363,75 +339,35 @@ http://localhost:9000 or http://<ip_address>:9000
 ## Setup SSL
 ### Connect to your Server:
 
-### Create an config file with command line
+### Install Caddy web server
 ```bash
-sudo nano /etc/nginx/sites-enabled/your-domain-you-want-use
+sudo apt install -y debian-keyring debian-archive-keyring apt-transport-https curl &&\
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg &&\
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list &&\
+sudo apt update -y &&\
+sudo apt install caddy -y
 ```
 
-### Generate certbot certificate with simple command:
-In case, you don’t have any web server running on your system. You can --standalone option to complete the domain validation by stating a dummy web server. This option needs to bind to port 80 in order to perform domain validation.
+### Give permission HTTPS for caddy
+sudo setcap CAP_NET_BIND_SERVICE=+eip $(which caddy)
 
-Temporary stop nginx with command
-```bash
-sudo service nginx stop
-```
+### Restart Caddy server for take effect
+caddy stop
+caddy start
 
-```bash
-sudo certbot certonly --standalone
-```
-![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/74acc45c-e991-4b70-875c-9e8df0d7af76)
+### Create Caddyfile config
+mkdir caddy-config && cd caddy-config
+sudo nano Caddyfile
 
-Start Nginx again
-```bash
-sudo service nginx start
-```
-
-
-### Config nginx with example file config below
-```bash
-# Your Application Reverse Proxy: force ssl for yourdomain.com (Your Application Reverse Proxy)
-# Copy it into /etc/nginx/sites-enabled/your-domain-you-want-use
-upstream app {
-  server localhost:3000;
-  server localhost:3001;
-  server localhost:3002;
-}
-
-server {
-        listen 80;
-        server_name yourdomain.com;
-        return 301 https://yourdomain.com$request_uri;
-}
-
-#Your Application Reverse Proxy: point yourdomain.com to port 3000
-server {
-        listen 443 ssl;
-        listen [::]:443 ssl;
-
-        server_name yourdomain.com http://yourdomain.com;
-        # Certificate
-        ssl_certificate /etc/letsencrypt/live/yourdomain.com/fullchain.pem;
-
-        # Private Key
-        ssl_certificate_key /etc/letsencrypt/live/yourdomain.com/privkey.pem;
-        location / {
-              client_max_body_size 5M;
-              proxy_pass http://app;
-              proxy_set_header Host $host;
-              proxy_http_version 1.1;
-              proxy_set_header X-Real-IP $remote_addr;
-              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-              proxy_set_header X-Forwarded-Proto $scheme;
-              proxy_set_header Upgrade $http_upgrade;
-              proxy_set_header Connection "upgrade";
-              proxy_read_timeout 86400;
-        }
+```Caddyfile
+kuma.thienlam3.line.pm {
+		reverse_proxy localhost:3001
 }
 ```
+Save this file
 
-## Restart Nginx Server
-```bash
-sudo service nginx restart
-```
+### Reload Caddy web server to apply domain name without downtime
+caddy reload
 
+### Waiting about 2 to 15 minutes and then cerification obtained appear, and we are done.
 ## Create S3 with cloud formation
