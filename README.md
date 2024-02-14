@@ -165,36 +165,34 @@ This workflow automates the process of building a Docker image, copying it to a 
 ### 3. Type "deploy.staging.yml"
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/64ce0b2c-b370-47c2-9bf1-8e60cab08937)
 
-### 4. Paste selected text into element
-You can get content from folder .github/workflows
-![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/4037672f-11c6-4f9c-a997-35cc3d42fe3c)
+### 4. Copy workflow content from file deploy.staging.yml in folder .github/workflows and paste to input
 
-### 6. Click on Commit changes...
+### 5. Click on Commit changes...
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/a2d6d12e-76c5-4ebf-9c25-18140e660f5c)
 
-### 7. Click on Commit message
+### 6. Click on Commit message
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/abed567c-93f5-4e4f-9791-6079d674ad96)
 
-### 8. Select Create a new branch for this commit and start a pull request…
+### 7. Select Create a new branch for this commit and start a pull request…
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/1e01db64-fa40-4265-a273-cc3211287ae0)
 
-### 9. Type "prepare-workflow"
+### 8. Type "prepare-workflow"
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/1ed1c61a-cc55-4a06-aa24-0b872b5ab9c5)
 
 
-### 10. Click on Propose changes
+### 9. Click on Propose changes
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/9362cc76-c807-43cb-b45d-f593357b3898)
 
-### 11. Click on base: main
+### 10. Click on base: main
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/fc390785-23e0-4ab3-90d4-7e741b4c5667)
 
-### 12. Click on main…
+### 11. Click on main…
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/cd64fe58-a591-4112-801e-6ad3b16b7e95)
 
-### 13. Click on Create pull request
+### 12. Click on Create pull request
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/7ce5e6a6-e8e9-4de4-b744-effb62104db8)
 
-### 14. Click on Create pull request
+### 13. Click on Create pull request
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/d2832112-5bce-45db-a6b2-d131a46f9399)
 
 # [Managing Secrets and Variables in GitHub Actions](https://app.tango.us/app/workflow/be8b220c-72bf-44da-8094-aac7667c044d?utm_source=markdown&utm_medium=markdown&utm_campaign=workflow%20export%20links)
