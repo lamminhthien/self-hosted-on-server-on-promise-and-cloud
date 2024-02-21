@@ -328,8 +328,50 @@ sudo apt update -y &&\
 sudo apt install caddy -y
 ```
 
+### Add Caddy Web Server run in background
+Next, use your favourite text editor to create the file /etc/systemd/system/caddy.service. Most distributions have the vi editor installed, so you can run
+```bash
+sudo vi /etc/systemd/system/caddy.service
+```
+In the vi editor, press i to enter the editing mode.
+
+```.service
+[Unit]
+Description=Caddy web server
+After=network-online.target
+
+[Service]
+User=caddy
+Group=caddy
+Type=exec
+WorkingDirectory=/var/caddy/html
+
+ExecStart=/usr/local/bin/caddy run -config /etc/caddy/Caddyfile
+ExecReload=/usr/local/bin/caddy reload -config /etc/caddy/Caddyfile
+ExecStop=/usr/local/bin/caddy stop
+
+LimitNOFILE=1048576
+LimitNPROC=512
+
+PrivateTmp=true
+PrivateDevices=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/etc/caddy/.local /etc/caddy/.config /var/log
+
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
+```
+Exit the editing mode by pressing “Esc”, and then type :wq to save the file.
+
 ### Give permission HTTPS for caddy
+```bash
 sudo setcap CAP_NET_BIND_SERVICE=+eip $(which caddy)
+```
 
 ### Restart Caddy server for take effect
 ```bash
