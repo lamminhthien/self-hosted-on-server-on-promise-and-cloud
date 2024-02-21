@@ -328,46 +328,6 @@ sudo apt update -y &&\
 sudo apt install caddy -y
 ```
 
-### Add Caddy Web Server run in background
-Next, use your favourite text editor to create the file /etc/systemd/system/caddy.service. Most distributions have the vi editor installed, so you can run
-```bash
-sudo vi /etc/systemd/system/caddy.service
-```
-In the vi editor, press i to enter the editing mode.
-
-```.service
-[Unit]
-Description=Caddy web server
-After=network-online.target
-
-[Service]
-User=caddy
-Group=caddy
-Type=exec
-WorkingDirectory=/var/caddy/html
-
-ExecStart=/usr/local/bin/caddy run -config /etc/caddy/Caddyfile
-ExecReload=/usr/local/bin/caddy reload -config /etc/caddy/Caddyfile
-ExecStop=/usr/local/bin/caddy stop
-
-LimitNOFILE=1048576
-LimitNPROC=512
-
-PrivateTmp=true
-PrivateDevices=true
-ProtectHome=true
-ProtectSystem=strict
-ReadWritePaths=/etc/caddy/.local /etc/caddy/.config /var/log
-
-CapabilityBoundingSet=CAP_NET_BIND_SERVICE
-AmbientCapabilities=CAP_NET_BIND_SERVICE
-NoNewPrivileges=true
-
-[Install]
-WantedBy=multi-user.target
-```
-Exit the editing mode by pressing “Esc”, and then type :wq to save the file.
-
 ### Give permission HTTPS for caddy
 ```bash
 sudo setcap CAP_NET_BIND_SERVICE=+eip $(which caddy)
@@ -379,15 +339,40 @@ caddy stop
 caddy start
 ```
 
-### Create Caddyfile config
-mkdir caddy-config && cd caddy-config
-sudo nano Caddyfile
+### Add Caddyfile config
+Using the Service
+If using a Caddyfile, you can edit your configuration with nano, vi, or your preferred editor:
+
+```bash
+sudo nano /etc/caddy/Caddyfile
+```
 
 ```Caddyfile
 kuma.thienlam3.line.pm {
 		reverse_proxy localhost:3001
 }
 ```
+
+Press CTR+O, Press Enter to save, and press CTRL + X to return back to terminal
+
+You can place your static site files in either /var/www/html or /srv. Make sure the caddy user has permission to read the files.
+
+To verify that the service is running:
+
+```bash
+sudo systemctl status caddy
+```
+The status command will also show the location of the currently running service file.
+
+When running with our official service file, Caddy's output will be redirected to journalctl. To read your full logs and to avoid lines being truncated:
+
+journalctl -u caddy --no-pager | less +G
+If using a config file, you can gracefully reload Caddy after making any changes:
+
+```bash
+sudo systemctl reload caddy
+```
+
 Save this file
 
 ### Reload Caddy web server to apply domain name without downtime
