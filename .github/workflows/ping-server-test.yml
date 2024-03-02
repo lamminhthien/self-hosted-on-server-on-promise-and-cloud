@@ -4,6 +4,11 @@ on:
   push:
     branches: ["main"]
 
+
+permissions:
+  contents: 'write'
+  packages: 'write'
+
 jobs:
   ping_server:
     runs-on: ubuntu-latest
@@ -17,4 +22,7 @@ jobs:
 
       - name: Archive Test Results
         if: failure()
-        run: echo "Send notification to google chat"
+        uses: 'google-github-actions/send-google-chat-webhook@v0.0.2'
+        with:
+          webhook_url: 'https://chat.googleapis.com/v1/spaces/AAAAXe1MFzc/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=K3vaz3i9cfSop0tIMJBtWFVZFrfGr55Hsys0fwLfbck'
+          mention: "<users/all>"
