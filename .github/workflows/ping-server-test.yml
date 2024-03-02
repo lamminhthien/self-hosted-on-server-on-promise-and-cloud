@@ -2,7 +2,7 @@ name: Check health server
 
 on:
   push:
-    branches: ["webhooks-google-chat"]
+    branches: ["**"]
 
 
 permissions:
@@ -22,7 +22,7 @@ jobs:
 
       - name: Archive Test Results
         if: failure()
-        uses: 'google-github-actions/send-google-chat-webhook@v0.0.2'
+        uses: teknatha136/actions-google-chat-text-message@main
         with:
-          webhook_url: 'https://chat.googleapis.com/v1/spaces/AAAAXe1MFzc/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=K3vaz3i9cfSop0tIMJBtWFVZFrfGr55Hsys0fwLfbck'
-          mention: "<users/all>"
+          google-chat-webhook: 'https://chat.googleapis.com/v1/spaces/AAAAXe1MFzc/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=K3vaz3i9cfSop0tIMJBtWFVZFrfGr55Hsys0fwLfbck'
+          text-message: Hello,\nThis is a test message.\nMessage sent by ${{ github.actor }}
