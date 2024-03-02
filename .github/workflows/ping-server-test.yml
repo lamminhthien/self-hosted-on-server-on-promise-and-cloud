@@ -2,7 +2,7 @@ name: Check health server
 
 on:
   push:
-    branches: ["main"]
+    branches: ["webhooks-google-chat"]
 
 
 permissions:
