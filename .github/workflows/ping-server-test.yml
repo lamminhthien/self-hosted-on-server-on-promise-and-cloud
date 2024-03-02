@@ -13,7 +13,7 @@ jobs:
         run: curl -m 5 https://api.quayso-mayman.vn/api/v1
 
       - name: Check backend stage
-        run: curl -m 5 https://stage-be.quayso-mayman.vn/api/v1
+        run: curl -m 5 https://aastage-be.quayso-mayman.vn/api/v1
 
       - name: Archive Test Results
         if: failure()
