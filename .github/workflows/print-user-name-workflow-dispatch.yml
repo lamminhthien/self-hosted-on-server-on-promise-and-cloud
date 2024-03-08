@@ -1,0 +1,16 @@
+name: Manual Workflow Dispatch
+
+on:
+  workflow_dispatch:
+    inputs:
+      username:
+        description: 'Enter your username'
+        required: true
+
+jobs:
+  print_username:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Username
+        run: |
+            echo "Username: ${{ github.event.inputs.username }}"
