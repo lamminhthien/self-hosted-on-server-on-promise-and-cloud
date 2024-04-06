@@ -382,3 +382,54 @@ caddy reload
 
 ### Waiting about 2 to 15 minutes and then cerification obtained appear, and we are done.
 ## Create S3 with cloud formation
+
+
+### (Old method for Domain and SSL)
+I will still keep tutorial about Nginx, HTTPS and SSL
+```bash
+sudo certbot certonly --nginx
+```
+
+Create a file in folder /etc/nginx/site-enabled/your_domain_name
+And paste this content
+
+```nginx
+server {
+        listen 80;
+        server_name test.thienlam3.line.pm;
+        return 301 https://test.thienlam3.line.pm$request_uri;
+}
+
+#Point test.thienlam3.line.pm to port 3002
+server {
+        listen 443 ssl http2;
+        listen [::]:443 ssl http2;
+
+        server_name test.thienlam3.line.pm http://test.thienlam3.line.pm;
+        location / {
+              proxy_pass http://localhost:3002;
+              client_max_body_size 5M;
+              proxy_set_header Host $host;
+              proxy_set_header X-Real-IP $remote_addr;
+              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+              proxy_set_header X-Forwarded-Proto $scheme;
+              proxy_set_header Upgrade $http_upgrade;
+              proxy_set_header Connection "upgrade";
+              proxy_read_timeout 86400;
+        }
+}
+```
+Save this file, then using certbot to auto generated ssl for above config
+```bash
+sudo certbot certonly --nginx
+```
+
+After choose suitable domain, then reload Nginx to take effect
+```bash
+sudo service nginx reload
+```
+
+Check nginx status again
+```bash
+sudo service nginx status
+```
