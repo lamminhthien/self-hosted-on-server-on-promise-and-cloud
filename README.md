@@ -387,7 +387,7 @@ caddy reload
 ### (Old method for Domain and SSL)
 I will still keep tutorial about Nginx, HTTPS and SSL
 ```bash
-sudo certbot certonly --nginx
+sudo certbot --nginx
 ```
 
 Create a file in folder /etc/nginx/site-enabled/your_domain_name
