@@ -386,9 +386,6 @@ caddy reload
 
 ### (Old method for Domain and SSL)
 I will still keep tutorial about Nginx, HTTPS and SSL
-```bash
-sudo certbot --nginx
-```
 
 Create a file in folder /etc/nginx/site-enabled/your_domain_name
 And paste this content
@@ -421,7 +418,7 @@ server {
 ```
 Save this file, then using certbot to auto generated ssl for above config
 ```bash
-sudo certbot certonly --nginx
+sudo certbot --nginx
 ```
 
 After choose suitable domain, then reload Nginx to take effect
