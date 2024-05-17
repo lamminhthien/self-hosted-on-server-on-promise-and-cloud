@@ -375,7 +375,8 @@ sudo systemctl reload caddy
 
 ### Add Cronjob to automatically check ssl expire and auto renew
 0  0,12 *  *  * sudo certbot renew --nginx --post-hook "systemctl reload nginx"
-## If using with google chat
+### Add Cronjob to automatically check ssl expire and auto renew with google chat notification
+0  0,12 *  *  * curl -X POST -H 'Content-Type: application/json' "https://chat.googleapis.com/v1/spaces/AAAAKiLkcjo/messages?key=aaaa&token=123" -d '{"text": "'"$(sudo certbot renew --nginx)"'"}'
 
 
 Save this file
