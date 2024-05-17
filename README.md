@@ -373,6 +373,11 @@ If using a config file, you can gracefully reload Caddy after making any changes
 sudo systemctl reload caddy
 ```
 
+### Add Cronjob to automatically check ssl expire and auto renew
+0  0,12 *  *  * sudo certbot renew --nginx --post-hook "systemctl reload nginx"
+## If using with google chat
+
+
 Save this file
 
 ### Reload Caddy web server to apply domain name without downtime
