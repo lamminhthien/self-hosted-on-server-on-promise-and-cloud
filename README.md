@@ -90,6 +90,17 @@ sudo snap install docker
 
 # Grant permission for run Docker without root user
 sudo chmod 666 /var/run/docker.sock
+
+# Install Nginx proxy manager
+sudo docker run -d \
+  --name app \
+  --restart unless-stopped \
+  -p 80:80 \
+  -p 443:443 \
+  -p 81:81 \
+  -v ./data:/data \
+  -v ./letsencrypt:/etc/letsencrypt \
+  jc21/nginx-proxy-manager:latest
 ```
 
 ![image](https://github.com/lamminhthien/self-hosted-on-server-on-promise-and-cloud/assets/99172799/3a17ef63-65e8-48c4-a059-ec1873aba4b5)
