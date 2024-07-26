@@ -35,7 +35,7 @@ jobs:
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.STAGE_SERVER_HOST }}
-          username: ubuntu
+          username: ${{ secrets.STAGE_SERVER_USERNAME }}
           port: 22
           key: ${{ secrets.STAGE_SERVER_KEY_SSH }}
           source: "your-project-name.tar,docker-compose-ssh.yml"
@@ -45,7 +45,7 @@ jobs:
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.STAGE_SERVER_HOST }}
-          username: lamminhthien02012000
+          username: ${{ secrets.STAGE_SERVER_USERNAME }}
           port: 22
           key: ${{ secrets.STAGE_SERVER_KEY_SSH }}
           script_stop: true
