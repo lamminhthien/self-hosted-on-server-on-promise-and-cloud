@@ -1,11 +1,8 @@
-# This workflow will use github action server to build docker, then deploy docker image on your own server.
-# Prevent overload, high cpu, high RAM usage on your own server.
-# This not only work for Amazon Web Service, but also work for 3rd party server like Vietnix VPS, Digital Ocean, Viettel IDC,...
-# Attention: Use your Visual Studio Code to open and copy ssh key, do not use cat command on terminal to copy key.
-name: Deploy on server stage (Project Name 2)
+name: Deploy Nest API STAGE
 
 env:
-  APP_ENV: ${{ secrets.STAGING }}
+  APP_ENV: ${{ secrets.STAGE_ENV }}
+  APP_NAME: nest-app
 
 on:
   push:
@@ -15,10 +12,10 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Pull code
+      - name: Pull Code
         uses: actions/checkout@v3
 
-      - name: Extract env file multi line.
+      - name: Extract STAGE_ENV to .env
         run: |
           rm -r -f .env
           touch .env_temp
@@ -26,32 +23,32 @@ jobs:
           sed 's/ /\n/g' .env_temp >> .env
           rm -r -f .env_temp
 
-      - name: Docker
+      - name: Build image without docker-compose, just use Dockerfile
         run: |
-          docker build -t nestjs-22 .
-          docker save -o nestjs-22.tar nestjs-22
+          docker build -t $APP_NAME .
+          docker save -o $APP_NAME.tar $APP_NAME
 
-      - name: Copy Docker image to ec2 use SSH Key
+      - name: Connect to your server via SSH key and copy docker image from Github Action server to your server
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.STAGE_SERVER_HOST }}
           username: ${{ secrets.STAGE_SERVER_USERNAME }}
           port: 22
           key: ${{ secrets.STAGE_SERVER_KEY_SSH }}
-          source: "your-project-name.tar,docker-compose-ssh.yml"
-          target: "~/your-project-name"
+          source: "$APP_NAME.tar,docker-compose.yml"
+          target: "~/$APP_NAME"
 
-      - name: Executing remote ssh commands using SSH Key
+      - name: Connect to your server via SSH key and run linux command on your server to deploy or update app
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.STAGE_SERVER_HOST }}
           username: ${{ secrets.STAGE_SERVER_USERNAME }}
           port: 22
-          key: ${{ secrets.STAGE_SERVER_KEY_SSH }}
+          key: ${{ secrets.STAGE_SERVER_PRIVATE_SSH_KEY }}
           script_stop: true
           script: |
-            cd ~/your-project-name
-            sudo docker load --input nestjs-22.tar
-            sudo docker-compose -f docker-compose-ssh.yml  up -d --force-recreate
-            rm -rf nestjs-22.tar
-            sudo docker image prune -a -f
+            cd ~/$APP_NAME
+            docker load --input $APP_NAME.tar
+            docker-compose up -d --force-recreate --no-build
+            rm -rf $APP_NAME.tar
+            docker image prune -a -f
