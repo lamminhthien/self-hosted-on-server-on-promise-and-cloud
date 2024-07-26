@@ -2,7 +2,7 @@
 # Prevent overload, high cpu, high RAM usage on your own server.
 # This not only work for Amazon Web Service, but also work for 3rd party server like Vietnix VPS, Digital Ocean, Viettel IDC,...
 # Attention: Use your Visual Studio Code to open and copy ssh key, do not use cat command on terminal to copy key.
-name: Deploy on server stage (Project Name)
+name: Deploy on server stage (Project Name 2)
 
 env:
   APP_ENV: ${{ secrets.STAGING }}
