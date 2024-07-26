@@ -25,8 +25,8 @@ jobs:
 
       - name: Build image without docker-compose, just use Dockerfile
         run: |
-          docker build -t $APP_NAME .
-          docker save -o $APP_NAME.tar $APP_NAME
+          docker build -t ${{ env.APP_NAME }} .
+          docker save -o ${{ env.APP_NAME }}.tar ${{ env.APP_NAME }}
 
       - name: Connect to your server via SSH key and copy docker image from Github Action server to your server
         uses: appleboy/scp-action@v0.1.4
@@ -35,8 +35,8 @@ jobs:
           username: ${{ secrets.STAGE_SERVER_USERNAME }}
           port: 22
           key: ${{ secrets.STAGE_SERVER_KEY_SSH }}
-          source: "$APP_NAME.tar,docker-compose.yml"
-          target: "~/$APP_NAME"
+          source: "${{ env.APP_NAME }}.tar,docker-compose.yml"
+          target: "~/${{ env.APP_NAME }}"
 
       - name: Connect to your server via SSH key and run linux command on your server to deploy or update app
         uses: appleboy/ssh-action@v1.0.0
@@ -47,8 +47,8 @@ jobs:
           key: ${{ secrets.STAGE_SERVER_PRIVATE_SSH_KEY }}
           script_stop: true
           script: |
-            cd ~/$APP_NAME
-            docker load --input $APP_NAME.tar
+            cd ~/${{ env.APP_NAME }}
+            docker load --input ${{ env.APP_NAME }}.tar
             docker-compose up -d --force-recreate --no-build
-            rm -rf $APP_NAME.tar
+            rm -rf ${{ env.APP_NAME }}.tar
             docker image prune -a -f
