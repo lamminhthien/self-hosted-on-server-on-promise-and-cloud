@@ -50,6 +50,6 @@ jobs:
             cd ~/${{ env.APP_NAME }}
             docker load --input ${{ env.APP_NAME }}.tar
             # docker-compose up -d --force-recreate --no-build
-            docker stack deploy cwo-be-swarm || docker service update --image cwo-be-swarm:latest cwo-be-swarm_app
+            docker stack deploy ${{ env.APP_NAME }}-swarm || docker service update --image ${{ env.APP_NAME }}-swarm:latest ${{ env.APP_NAME }}-swarm_app
             rm -rf ${{ env.APP_NAME }}.tar
             docker image prune -a -f
