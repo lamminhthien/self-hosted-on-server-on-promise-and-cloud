@@ -1,0 +1,43 @@
+name: Install PostgreSQL Database (Docker)
+
+on:
+  workflow_dispatch:
+
+env:
+  POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+  POSTGRES_TEST_PASSWORD: ${{ secrets.POSTGRES_TEST_PASSWORD }}
+
+jobs:
+  install-postgres:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Connect to server and install PostgreSQL
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.STAGE_SERVER_HOST }}
+          username: ${{ secrets.STAGE_SERVER_USERNAME }}
+          port: 22
+          key: ${{ secrets.STAGE_SERVER_PRIVATE_SSH_KEY }}
+          script: |
+            # Pull the PostgreSQL image
+            docker pull postgres:14
+
+            # Run Database (for production)
+            docker run -d \
+              --name postgres_db \
+              -e POSTGRES_PASSWORD=${{ env.POSTGRES_PASSWORD }} \
+              -p 5432:5432 \
+              -v postgres_data:/var/lib/postgresql/data \
+              postgres:14
+
+            # Run Database (for testing)
+            docker run -d \
+              --name postgres_dbtest \
+              -e POSTGRES_TEST_PASSWORD=${{ env.POSTGRES_TEST_PASSWORD }} \
+              -p 5436:5432 \
+              -v postgres_data:/var/lib/postgresql/data \
+              postgres:14
+
+            ufw allow 5432
+            ufw allow 5436
+            ufw reload

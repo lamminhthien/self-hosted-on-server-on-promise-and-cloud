@@ -1,4 +1,4 @@
-name: Deploy Nest API STAGE
+name: Deploy Nest API to Digital Ocean STAGE
 
 env:
   APP_ENV: ${{ secrets.STAGE_ENV }}
@@ -29,13 +29,13 @@ jobs:
           docker save -o ${{ env.APP_NAME }}.tar ${{ env.APP_NAME }}
 
       - name: Connect to your server via SSH key and copy docker image from Github Action server to your server
-        uses: appleboy/scp-action@v0.1.5
+        uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.STAGE_SERVER_HOST }}
           username: ${{ secrets.STAGE_SERVER_USERNAME }}
           port: 22
-          key: ${{ secrets.STAGE_SERVER_KEY_SSH }}
-          source: "${{ env.APP_NAME }}.tar,docker-compose.yml"
+          key: ${{ secrets.STAGE_SERVER_PRIVATE_SSH_KEY }}
+          source: "${{ env.APP_NAME }}.tar,docker-compose.yml,.env"
           target: "~/${{ env.APP_NAME }}"
 
       - name: Connect to your server via SSH key and run linux command on your server to deploy or update app

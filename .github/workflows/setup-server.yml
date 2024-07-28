@@ -1,0 +1,79 @@
+name: 1. Setup Server
+
+on:
+  workflow_dispatch:
+
+jobs:
+  install-platform:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Connect to server and install software
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.STAGE_SERVER_HOST }}
+          username: ${{ secrets.STAGE_SERVER_USERNAME }}
+          port: 22
+          key: ${{ secrets.STAGE_SERVER_PRIVATE_SSH_KEY }}
+          script: |
+            # Check if Docker is installed
+            if ! command -v docker &> /dev/null; then
+              echo "Docker not found. Installing Docker..."
+              curl -fsSL https://get.docker.com/ | sudo sh
+              sudo usermod -aG docker $USER
+              echo "Docker installed. You may need to log out and log back in for group changes to take effect."
+              # Note: Changes to user groups won't take effect until next login
+              # For this run, we'll use sudo for docker commands
+            else
+              echo "Docker is already installed"
+            fi
+
+            # Check if Docker Compose is already installed
+            if ! command -v docker-compose &> /dev/null
+            then
+              echo "Docker Compose not found, installing..."
+              sudo curl -L "https://github.com/docker/compose/releases/download/v2.29.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+            else
+              echo "Docker Compose is already installed."
+            fi
+
+            # Check if Swarm is initialized
+
+            if ! docker info | grep -q "Swarm: active"; then
+              echo "Swarm not initialized. Initializing now..."
+              sudo docker swarm init
+            else
+              echo "Swarm is already active"
+            fi
+
+            # Check if Nginx Proxy Manager is already installed
+            if [ -d "/nginx-proxy-manager" ]; then
+              echo "Nginx Proxy Manager is already installed."
+            else
+              echo "Nginx Proxy Manager not found, installing..."
+              mkdir ~/nginx-proxy-manager && cd ~/nginx-proxy-manager
+
+              # Create the Docker Compose file
+              filename="docker-compose.yml"
+
+              cat << EOF > $filename
+              version: '3.8'
+              services:
+                app:
+                  image: 'jc21/nginx-proxy-manager:latest'
+                  restart: unless-stopped
+                  ports:
+                    - '80:80'
+                    - '81:81'
+                    - '443:443'
+                  volumes:
+                    - ./data:/data
+                    - ./letsencrypt:/etc/letsencrypt
+
+              EOF
+
+              echo "Docker Compose file created."
+
+              # Start the Nginx Proxy Manager
+              docker-compose up -d
+              echo "Nginx Proxy Manager is now running."
+            fi
