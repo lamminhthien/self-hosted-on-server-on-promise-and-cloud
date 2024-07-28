@@ -3,7 +3,7 @@ version: '3.9'
 services:
   app:
     image: nest-app
-    restart: always
+    # restart: always
     replicas: 2
     build:
       context: .
