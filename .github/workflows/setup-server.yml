@@ -77,3 +77,6 @@ jobs:
               docker-compose up -d
               echo "Nginx Proxy Manager is now running."
             fi
+
+            echo "Reboot server to make docker can run without need root"
+            sudo reboot
