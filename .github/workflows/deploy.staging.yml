@@ -34,7 +34,9 @@ jobs:
           host: ${{ secrets.STAGE_SERVER_HOST }}
           username: ${{ secrets.STAGE_SERVER_USERNAME }}
           port: 22
-          key: ${{ secrets.STAGE_SERVER_PRIVATE_SSH_KEY }}
+          # key: ${{ secrets.STAGE_SERVER_PRIVATE_SSH_KEY }}
+          password: ${{ secrets.STAGE_SERVER_PASSWORD}}
+
           source: "${{ env.APP_NAME }}.tar,docker-compose.yml,.env"
           target: "~/${{ env.APP_NAME }}"
 
@@ -44,7 +46,8 @@ jobs:
           host: ${{ secrets.STAGE_SERVER_HOST }}
           username: ${{ secrets.STAGE_SERVER_USERNAME }}
           port: 22
-          key: ${{ secrets.STAGE_SERVER_PRIVATE_SSH_KEY }}
+          # key: ${{ secrets.STAGE_SERVER_PRIVATE_SSH_KEY }}
+          password: ${{ secrets.STAGE_SERVER_PASSWORD}}
           script_stop: true
           script: |
             cd ~/${{ env.APP_NAME }}

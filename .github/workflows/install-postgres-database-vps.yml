@@ -17,7 +17,8 @@ jobs:
           host: ${{ secrets.STAGE_SERVER_HOST }}
           username: ${{ secrets.STAGE_SERVER_USERNAME }}
           port: 22
-          key: ${{ secrets.STAGE_SERVER_PRIVATE_SSH_KEY }}
+          # key: ${{ secrets.STAGE_SERVER_PRIVATE_SSH_KEY }}
+          password: ${{ secrets.STAGE_SERVER_PASSWORD}}
           script: |
             # Pull the PostgreSQL image
             docker pull postgres:14
