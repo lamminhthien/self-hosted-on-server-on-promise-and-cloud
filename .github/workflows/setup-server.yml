@@ -13,7 +13,6 @@ jobs:
           host: ${{ secrets.STAGE_SERVER_HOST }}
           username: ${{ secrets.STAGE_SERVER_USERNAME }}
           port: 22
-          # key: ${{ secrets.STAGE_SERVER_PRIVATE_SSH_KEY }}
           password: ${{ secrets.STAGE_SERVER_PASSWORD}}
           script: |
             # Check if Docker is installed
@@ -53,24 +52,15 @@ jobs:
               echo "Nginx Proxy Manager not found, installing..."
               mkdir ~/nginx-proxy-manager && cd ~/nginx-proxy-manager
 
-              # Create the Docker Compose file
-              filename="docker-compose.yml"
-
-              cat << EOF > $filename
-              version: '3.8'
-              services:
-                app:
-                  image: 'jc21/nginx-proxy-manager:latest'
-                  restart: unless-stopped
-                  ports:
-                    - '80:80'
-                    - '81:81'
-                    - '443:443'
-                  volumes:
-                    - ./data:/data
-                    - ./letsencrypt:/etc/letsencrypt
-
-              EOF
+            docker run -d \
+              --name nginx-proxy-manager \
+              --restart unless-stopped \
+              -p 80:80 \
+              -p 81:81 \
+              -p 443:443 \
+              -v $(pwd)/data:/data \
+              -v $(pwd)/letsencrypt:/etc/letsencrypt \
+              jc21/nginx-proxy-manager:latest
 
               echo "Docker Compose file created."
 
