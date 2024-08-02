@@ -19,7 +19,7 @@ jobs:
           port: 22
           password: ${{ secrets.STAGE_SERVER_PASSWORD}}
           script: |
-           # mkdir -p ${HOME}/minio/data
+           mkdir -p ${HOME}/minio/data
 
             docker run \
               -p 9000:9000 \
