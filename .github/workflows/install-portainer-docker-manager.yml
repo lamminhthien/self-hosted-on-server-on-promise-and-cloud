@@ -1,0 +1,22 @@
+name: 5. Install Portainer (Docker Manager)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  install-portainer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Connect to server and install Portainer
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.STAGE_SERVER_HOST }}
+          username: ${{ secrets.STAGE_SERVER_USERNAME }}
+          port: 22
+          password: ${{ secrets.STAGE_SERVER_PASSWORD}}
+          script: |
+            docker volume create portainer_data
+            docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ee:latest
+            ufw allow 8000
+            ufw allow 9443
+            ufw reload
