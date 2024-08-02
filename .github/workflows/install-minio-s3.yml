@@ -8,7 +8,7 @@ env:
   POSTGRES_TEST_PASSWORD: ${{ secrets.POSTGRES_TEST_PASSWORD }}
 
 jobs:
-  install-postgres:
+  install-minio:
     runs-on: ubuntu-latest
     steps:
       - name: Connect to server and install PostgreSQL
