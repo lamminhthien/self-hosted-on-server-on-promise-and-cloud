@@ -1,4 +1,4 @@
-name: Install PostgreSQL Database (Docker)
+name: 2. Install PostgreSQL Database (Docker)
 
 on:
   workflow_dispatch:

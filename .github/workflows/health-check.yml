@@ -1,4 +1,4 @@
-name: Check health server die or alive
+name: 3. Check health server die or alive
 
 on:
   schedule:
