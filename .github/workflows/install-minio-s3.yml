@@ -1,0 +1,36 @@
+name: 2. Install PostgreSQL Database (Docker)
+
+on:
+  workflow_dispatch:
+
+env:
+  POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+  POSTGRES_TEST_PASSWORD: ${{ secrets.POSTGRES_TEST_PASSWORD }}
+
+jobs:
+  install-postgres:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Connect to server and install PostgreSQL
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.STAGE_SERVER_HOST }}
+          username: ${{ secrets.STAGE_SERVER_USERNAME }}
+          port: 22
+          password: ${{ secrets.STAGE_SERVER_PASSWORD}}
+          script: |
+           # mkdir -p ${HOME}/minio/data
+
+            docker run \
+              -p 9000:9000 \
+              -p 9001:9001 \
+              --user $(id -u):$(id -g) \
+              --name minio1 \
+              -e "MINIO_ROOT_USER=${{ secrets.MINIO_ROOT_USER }}" \
+              -e "MINIO_ROOT_PASSWORD=${{ secrets.MINIO_ROOT_PASSWORD }}" \
+              -v ${HOME}/minio/data:/data \
+              quay.io/minio/minio server /data --console-address ":9001"
+
+            ufw allow 9000
+            ufw allow 9001
+            ufw reload
