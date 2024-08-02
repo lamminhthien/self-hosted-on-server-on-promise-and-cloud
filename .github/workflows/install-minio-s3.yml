@@ -1,4 +1,4 @@
-name: 2. Install PostgreSQL Database (Docker)
+name: 4. Install MiniO S3 (Docker)
 
 on:
   workflow_dispatch:
