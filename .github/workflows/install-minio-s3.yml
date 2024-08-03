@@ -31,6 +31,6 @@ jobs:
               -v ${HOME}/minio/data:/data \
               quay.io/minio/minio server /data --console-address ":9001"
 
-            ufw allow 9000
-            ufw allow 9001
-            ufw reload
+            # ufw allow 9000
+            # ufw allow 9001
+            # ufw reload

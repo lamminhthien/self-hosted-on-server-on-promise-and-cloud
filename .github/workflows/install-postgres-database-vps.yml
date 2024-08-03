@@ -39,6 +39,6 @@ jobs:
               -v postgres_data:/var/lib/postgresql/data \
               postgres:14
 
-            ufw allow 5432
-            ufw allow 5436
-            ufw reload
+            # ufw allow 5432
+            # ufw allow 5436
+            # ufw reload

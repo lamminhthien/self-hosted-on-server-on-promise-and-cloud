@@ -1,0 +1,50 @@
+name: Install MailServer (Docker)
+
+on:
+  workflow_dispatch:
+
+env:
+  POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+  POSTGRES_TEST_PASSWORD: ${{ secrets.POSTGRES_TEST_PASSWORD }}
+
+jobs:
+  install-postgres:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Connect to server and install PostgreSQL
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.STAGE_SERVER_HOST }}
+          username: ${{ secrets.STAGE_SERVER_USERNAME }}
+          port: 22
+          # key: ${{ secrets.STAGE_SERVER_PRIVATE_SSH_KEY }}
+          password: ${{ secrets.STAGE_SERVER_PASSWORD}}
+          script: |
+            mkdir -p mail-server
+            cd mail-server
+            cat > docker-compose.yml <<EOF
+            services:
+              mailserver:
+                image: ghcr.io/docker-mailserver/docker-mailserver:latest
+                container_name: mailserver
+                hostname: mail.example.com
+                ports:
+                  - "25:25"
+                  - "465:465"
+                  - "587:587"
+                  - "993:993"
+                volumes:
+                  - ./docker-data/dms/mail-data/:/var/mail/
+                  - ./docker-data/dms/mail-state/:/var/mail-state/
+                  - ./docker-data/dms/mail-logs/:/var/log/mail/
+                  - ./docker-data/dms/config/:/tmp/docker-mailserver/
+                  - /etc/localtime:/etc/localtime:ro
+                environment:
+                  - ENABLE_RSPAMD=1
+                  - ENABLE_CLAMAV=1
+                  - ENABLE_FAIL2BAN=1
+                cap_add:
+                  - NET_ADMIN
+                restart: always
+            EOF
+            docker-compose up -d
