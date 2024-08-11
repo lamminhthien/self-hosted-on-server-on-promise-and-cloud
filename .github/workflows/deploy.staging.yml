@@ -37,7 +37,7 @@ jobs:
           # key: ${{ secrets.STAGE_SERVER_PRIVATE_SSH_KEY }}
           password: ${{ secrets.STAGE_SERVER_PASSWORD}}
 
-          source: "${{ env.APP_NAME }}.tar,docker-compose.yml,.env"
+          source: "${{ env.APP_NAME }}.tar,docker-compose.yml,.env,reverse-proxy.Caddyfile"
           target: "~/${{ env.APP_NAME }}"
 
       - name: Connect to your server via SSH key and run linux command on your server to deploy or update app
