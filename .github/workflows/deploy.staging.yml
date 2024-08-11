@@ -52,6 +52,6 @@ jobs:
           script: |
             cd ~/${{ env.APP_NAME }}
             docker load --input ${{ env.APP_NAME }}.tar
-            docker rollout nest-app || docker-compose up -d --force-recreate --no-build
+            docker rollout nest-app
             rm -rf ${{ env.APP_NAME }}.tar
             docker image prune -a -f

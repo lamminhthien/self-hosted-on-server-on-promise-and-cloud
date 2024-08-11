@@ -8,8 +8,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        NODE_ENV: ${NODE_ENV}
     env_file:
       - .env
     ports:
