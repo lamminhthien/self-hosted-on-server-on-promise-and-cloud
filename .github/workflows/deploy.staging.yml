@@ -3,6 +3,7 @@ name: Deploy Nest API to Digital Ocean STAGE
 env:
   APP_ENV: ${{ secrets.STAGE_ENV }}
   APP_NAME: nest-app
+  STACK_NAME: nest-stack
 
 on:
   push:
@@ -17,41 +18,44 @@ jobs:
 
       - name: Extract STAGE_ENV to .env
         run: |
-          rm -r -f .env
-          touch .env_temp
-          echo $APP_ENV | tee .env_temp
-          sed 's/ /\n/g' .env_temp >> .env
-          rm -r -f .env_temp
+          rm -rf .env
+          echo "$APP_ENV" | tr ' ' '\n' > .env
 
-      - name: Build image without docker-compose, just use Dockerfile
+      - name: Build image
         run: |
           docker build -t ${{ env.APP_NAME }} .
           docker save -o ${{ env.APP_NAME }}.tar ${{ env.APP_NAME }}
 
-      - name: Connect to your server via SSH key and copy docker image from Github Action server to your server
+      - name: Copy files to server
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.STAGE_SERVER_HOST }}
           username: ${{ secrets.STAGE_SERVER_USERNAME }}
           port: 22
-          # key: ${{ secrets.STAGE_SERVER_PRIVATE_SSH_KEY }}
           password: ${{ secrets.STAGE_SERVER_PASSWORD}}
-
           source: "${{ env.APP_NAME }}.tar,docker-compose.yml,.env,reverse-proxy.Caddyfile"
           target: "~/${{ env.APP_NAME }}"
 
-      - name: Connect to your server via SSH key and run linux command on your server to deploy or update app
+      - name: Deploy or update app
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.STAGE_SERVER_HOST }}
           username: ${{ secrets.STAGE_SERVER_USERNAME }}
           port: 22
-          # key: ${{ secrets.STAGE_SERVER_PRIVATE_SSH_KEY }}
           password: ${{ secrets.STAGE_SERVER_PASSWORD}}
           script_stop: true
           script: |
             cd ~/${{ env.APP_NAME }}
             docker load --input ${{ env.APP_NAME }}.tar
-            docker rollout nest-app
+            
+            # Check if the stack exists
+            if docker stack ls | grep -q ${{ env.STACK_NAME }}; then
+              echo "Updating existing stack"
+              docker service update --image ${{ env.APP_NAME }}:latest ${{ env.STACK_NAME }}_${{ env.APP_NAME }}
+            else
+              echo "Deploying new stack"
+              docker stack deploy -c docker-compose.yml ${{ env.STACK_NAME }}
+            fi
+            
             rm -rf ${{ env.APP_NAME }}.tar
             docker image prune -a -f
