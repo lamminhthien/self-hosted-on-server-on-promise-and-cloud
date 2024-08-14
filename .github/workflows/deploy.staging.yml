@@ -28,6 +28,7 @@ jobs:
 
           echo "Check service can be start correctly before deploy"
           docker compose up -d --force-recreate --no-build
+          docker ps -a
           curl http://localhost:3500
 
       - name: Copy files to server
