@@ -27,7 +27,7 @@ jobs:
           docker save -o ${{ env.APP_NAME }}.tar ${{ env.APP_NAME }}
 
           echo "Check service can be start correctly before deploy"
-          docker-compose up -d --force-recreate --no-build
+          docker compose up -d --force-recreate --no-build
           curl http://localhost:3500
 
       - name: Copy files to server
