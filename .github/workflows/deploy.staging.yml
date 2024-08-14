@@ -29,7 +29,11 @@ jobs:
           echo "Check service can be start correctly before deploy"
           docker compose up -d --force-recreate --no-build
           docker ps -a
-          curl http://localhost:3500
+          # Get the container ID
+          CONTAINER_ID=$(docker ps -qf "name=${{ env.APP_NAME }}")
+
+          # Run curl inside the container
+          docker exec $CONTAINER_ID curl http://localhost:3500
 
       - name: Copy files to server
         uses: appleboy/scp-action@v0.1.4
