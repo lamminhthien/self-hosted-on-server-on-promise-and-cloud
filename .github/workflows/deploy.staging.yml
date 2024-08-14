@@ -33,7 +33,7 @@ jobs:
           CONTAINER_ID=$(docker ps -qf "name=${{ env.APP_NAME }}")
 
           # Run curl inside the container
-          docker exec $CONTAINER_ID curl http://localhost:3500
+          docker exec $CONTAINER_ID wget -O- http://localhost:3500
 
       - name: Copy files to server
         uses: appleboy/scp-action@v0.1.4
