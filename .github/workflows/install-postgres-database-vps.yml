@@ -29,6 +29,7 @@ jobs:
               -e POSTGRES_PASSWORD=${{ env.POSTGRES_PASSWORD }} \
               -p 5432:5432 \
               -v postgres_data:/var/lib/postgresql/data \
+              --restart always \
               postgres:14
 
             # Run Database (for testing)
