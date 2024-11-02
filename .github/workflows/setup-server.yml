@@ -53,6 +53,7 @@ jobs:
               echo "Nginx Proxy Manager not found, installing..."
               mkdir ~/nginx-proxy-manager && cd ~/nginx-proxy-manager
 
+            # Install and start Docker proxy manager  
             docker run -d \
               --name nginx-proxy-manager \
               --restart unless-stopped \
@@ -64,11 +65,32 @@ jobs:
               jc21/nginx-proxy-manager:latest
 
               echo "Docker Compose file created."
-
-              # Start the Nginx Proxy Manager
-              docker-compose up -d
-              echo "Nginx Proxy Manager is now running."
             fi
+
+            # location /backend-service/ {
+            #     # Proxy settings if use the same domain
+            #     proxy_pass http://103.146.22.228:3500/;
+                
+            #     # Remove /backend-service/ prefix when forwarding
+            #     rewrite ^/backend-service/(.*) /$1 break;
+                
+            #     # Standard proxy headers
+            #     proxy_http_version 1.1;
+            #     proxy_set_header Upgrade $http_upgrade;
+            #     proxy_set_header Host $host;
+            #     proxy_set_header X-Real-IP $remote_addr;
+            #     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            #     proxy_set_header X-Forwarded-Proto $scheme;
+                
+            #     # WebSocket support
+            #     proxy_set_header Connection "Upgrade";
+                
+            #     # Timeouts
+            #     proxy_connect_timeout 60s;
+            #     proxy_send_timeout 60s;
+            #     proxy_read_timeout 60s;
+            # }
+
 
             # Install docker rollout for zero time deployments
             # Create directory for Docker cli plugins
