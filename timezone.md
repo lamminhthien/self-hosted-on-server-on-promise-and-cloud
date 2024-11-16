@@ -1,6 +1,6 @@
 # **Document: Handling Date-Time data in React.js and NestJS**
 
-This document provides updated guidelines for consistent handling of `start_date` and `end_date` (or `expiry_date`) in campaign-related modules like **points strategy**, **expiry strategy**, and **campaign manager**. It addresses frontend and backend responsibilities to ensure data integrity and consistency.
+This document provides guidelines for consistent handling of `start_date` and `end_date` (or `expiry_date`) in campaign-related modules like **points strategy**, **expiry strategy**, and **campaign manager**. It addresses frontend and backend responsibilities to ensure data integrity and consistency.
 
 ---
 
